@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function NavbarTemp() {
     const [open, setOpen] = useState(false);
 
     const toggleSidebar = (event) => {
@@ -9,7 +9,7 @@ function Navbar() {
         this.setState({ [key]: !this.state[key] });
     };
 
-    // TODO: open 상태에 따른 메뉴의 className 선언
+    // TODO: open 상태에 따른 메뉴의 className 선언s
 
     return (
         <div>
@@ -34,4 +34,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default NavbarTemp;
