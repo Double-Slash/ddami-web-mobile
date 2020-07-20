@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import sangse from './components/sangse';
+import Sangse from './components/Sangse';
 function App() {
   return (
-    <sangse/>
+    <Sangse/>
 
   );
 }
