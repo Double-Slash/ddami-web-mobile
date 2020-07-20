@@ -15,7 +15,7 @@ const MyDrawer = styled.div`
 
     /* 왼쪽으로 들어가는거야 */
     transition: transform 1s;
-    transform: translateX( ${ props => props.displayMobileNavbar? ("0%") :("-100%")});
+    transform: translateX( ${(open) => open? ("0%") :("-100%")});
 `;
 
 const MyDrawerLink = styled.nav`
@@ -66,9 +66,9 @@ const Myprofile = styled.div`
 `;
 
 
-const Drawer = props => {
+const Drawer = ({open}) => {
     return (
-        <MyDrawer displayMobileNavbar={props.displayMobileNavbar}>
+        <MyDrawer open={open}>
             {/* profile */}
             <Myprofile>
                 <div className="photo">

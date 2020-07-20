@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {useState} from 'react'
 import MobileNavbar from './MobileNavbar'
 import Drawer from './Drawer'
 import styled from 'styled-components'
@@ -12,24 +12,34 @@ const MyNavbar = styled.div`
     overflow-x: hidden;
 `;
 
-export default class Navbar extends Component {
+const Navbar = () => {
 
-    state = {
-        displayMobileNavbar: false
-    }
+    // useState 사용
+    // state = {
+    //     displayMobileNavbar: false
+    // }
+    const [open, setOpen] = useState(false)
 
-    toggleDrawerNavbar = () => {
-        this.setState(prevState => {
-            return { displayMobileNavbar: !prevState.displayMobileNavbar }
-        })
-    }
 
-    render() {
+    // const toggle
+    
+    // toggleDrawerNavbar = () => {
+    //     this.setState(prevState => {
+    //         return { displayMobileNavbar: !prevState.displayMobileNavbar }
+    //     })
+    // }
+    //  보류 
+    // const toggleDrawerNavbar = setOpen(!open);
+    
+
+
         return (
             <MyNavbar>
-                <MobileNavbar toggleDrawerNavbar = { this.toggleDrawerNavbar } />
-                <Drawer displayMobileNavbar = {this.state.displayMobileNavbar} />
+                <MobileNavbar open = {open} setOpen={setOpen}/>
+                {open && <Drawer open={open} /> }
             </MyNavbar>
         )
-    }
+    
 }
+
+export default Navbar;

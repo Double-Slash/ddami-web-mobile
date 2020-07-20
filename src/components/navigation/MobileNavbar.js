@@ -37,12 +37,12 @@ const NavRight = styled.div`
     margin-left:10rem;
 `;
 
-const MobileNavbar = props => {
+const MobileNavbar = ({open, setOpen}) => {
     return (
         <MyMobileNavbar>
 
             <MyMobileNavButton
-                onClick = { props.toggleDrawerNavbar }
+                onClick = { () => setOpen(!open) }
             >
                 <img src={mobileNavIcon} alt="mobileNavIcon"/>
             </MyMobileNavButton>
