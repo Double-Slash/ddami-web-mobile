@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
-import Sangse from './components/Sangse';
+import Detail from './components/Detail';
 function App() {
   return (
-    <Sangse/>
-
+    <Detail/>
   );
 }
 
