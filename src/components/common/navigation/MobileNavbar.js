@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import mobileNavIcon from '../../images/menu.svg'
-import mobileSearch from '../../images/search.svg'
-import moblieAnnouncement from '../../images/announcement.svg'
+import mobileNavIcon from '../../../images/menu.svg'
+import mobileSearch from '../../../images/search.svg'
+import moblieAnnouncement from '../../../images/announcement.svg'
 
 const MyMobileNavbar = styled.nav`
     display:flex;
@@ -26,6 +26,7 @@ const MyMobileNavButton = styled.button`
     width: 4rem;
     border: none;
     display:none;
+    outline: none;
 
     @media screen and (max-width:768px) {
         display:block;
@@ -40,27 +41,18 @@ const NavRight = styled.div`
 const MobileNavbar = ({open, setOpen}) => {
     return (
         <MyMobileNavbar>
-
-            <MyMobileNavButton
-                onClick = { () => setOpen(!open) }
-            >
+            <MyMobileNavButton onClick = { () => setOpen(!open) }>
                 <img src={mobileNavIcon} alt="mobileNavIcon"/>
             </MyMobileNavButton>
-
             <div className="logo">따미로고🐳</div>
-
             <NavRight>
                 <div className="search">
                     <img src={mobileSearch} alt="mobileSearch"/>
                 </div>
-
                 <div className="announce">
                     <img src={moblieAnnouncement} alt="moblieAnnouncement"/>
                 </div>
             </NavRight>
-  
-
-
         </MyMobileNavbar>
     );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navlinks from './Navlinks';
 import styled from 'styled-components';
-import profileImage from '../../images/profile.svg';
+import profileImage from '../../../images/profile.svg';
 
 const MyDrawer = styled.div`
     width: 70vw;
