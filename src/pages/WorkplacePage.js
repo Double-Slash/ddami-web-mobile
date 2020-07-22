@@ -1,13 +1,14 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import Workplace from '../components/workplace';
+import Write from '../components/workplace/Write';
 
-const WorkplacePage = ({history}) => {
-  console.log(history)
-  console.log(Workplace)
+const WorkplacePage = (props) => {
+  // const { match } = props
+  // const { path } = match
+
   return(
     <>
-      <Route exact path='/write' component={WorkplacePage.Write}/>
+      <Route exact path='/workplace/write' component={Write}/>
     </>
   )
 }
