@@ -6,7 +6,6 @@ const WriteTop = styled.div`
   padding: 0px 10px;
   display: flex;
   button {
-    
     background-color: white;
     outline: none;
     border: none;
@@ -26,13 +25,15 @@ const BackButton = styled.button`
 
 const TemporarySave = styled.div`
   width: 75%;
-  text-align: right;
 `
 
 const TempContent = styled.p`
   border: solid 1px grey;
   border-radius: 10px;
   padding: 5px;
+  width: 30%;
+  float: right;
+  text-align: center;
 `
 
 const RegisterButton = styled.button`
