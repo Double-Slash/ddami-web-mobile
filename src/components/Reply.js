@@ -34,6 +34,13 @@ margin-left:20px;
 background-color:#585858;
 `;
 /**댓글 기능 동작 */  
+
+/* const state = {
+    write_replys:[]
+    write_reply:""
+    b = "댓글작성"
+}*/
+
   const Changestate = (e) => {
       this.setState({
         write_reply: e.target.value,
@@ -60,17 +67,32 @@ background-color:#585858;
       });
       this.num += 1;// 댓글내용을 반환해줌
     }; 
-*/
+    onClick={
+              !this.state.comment
+                ? (e) => {
+                    e.preventDefault();
+                  }
+                  :  Changestate //댓글에 아무것도 입력되지 않았을 때는 댓글이 엔터되는걸 막아줌(버튼에 안에? 아니면 따로 컴포넌트?)
+    return(
+      <Profile/>{write_replys}//프로필,댓글 내용 반환
+    )
+                  */
 function Replyspace(){
     return (
               <div name="reply">
               <Profile></Profile>
                 <Reply type="textarea" rows='3'placeholder='댓글을 입력해주세요.'name='write_reply' onChange={Changestate} 
             onKeyUp={Enter}/>
-                <Button type='button' value='덧글 작성' name='rs_button'/>
+                <Button onClick={
+              !this.state.comment
+                ? (e) => {
+                    e.preventDefault();
+                  }
+                  :  Changestate}
+               type="button" value='덧글 작성' name='rs_button'/>
               </div>        
       );
   }
-  
+/*댓글에 아무것도 입력되지 않았을 때는 댓글이 엔터되는걸 막아줌*/
   export default Replyspace;
   
