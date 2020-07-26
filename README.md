@@ -11,3 +11,11 @@ Refactor : 코드 리펙토링
 Chore : 기타 작업
 Branch 이름은 기능별로 생성
 ```
+
+### install
+
+```
+git clone
+yarn install
+npm run start
+```
