@@ -83,13 +83,7 @@ function Replyspace(){
               <Profile></Profile>
                 <Reply type="textarea" rows='3'placeholder='댓글을 입력해주세요.'name='write_reply' onChange={Changestate} 
             onKeyUp={Enter}/>
-                <Button onClick={
-              !this.state.comment
-                ? (e) => {
-                    e.preventDefault();
-                  }
-                  :  Changestate}
-               type="button" value='덧글 작성' name='rs_button'/>
+                <Button type="button" value='덧글 작성' name='rs_button'/>
               </div>        
       );
   }
