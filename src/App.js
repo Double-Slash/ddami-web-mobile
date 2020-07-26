@@ -6,6 +6,7 @@ import ImageGrid from "./components/ImageGrid";
 import {Provider} from "react-redux";
 import createStore from "./utils/store";
 import {createGlobalStyle} from 'styled-components';
+import Page from './pages';
 
 const store = createStore();
 const GlobalStyle = createGlobalStyle`
@@ -24,8 +25,9 @@ function App() {
   return (
     <Provider store={store}>
       <GlobalStyle/>
-      <Route exact path="/" component={Main} />
-      <ImageGrid/>
+      <Page/>
+      {/*<Route exact path="/" component={Main} />*/}
+      {/*<ImageGrid/>*/}
     </Provider>
   );
 }
