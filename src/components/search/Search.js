@@ -2,6 +2,8 @@ import React, {useState, useRef, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import SearchHistory from "./SearchHistory";
+import SearchResults from "./SearchResults";
+import searchIcon from '../../static/icons/btn-search-enter.svg'
 
 export const SearchNav = styled.nav`
   position: fixed;
@@ -57,7 +59,7 @@ const SearchButton = styled.div`
 `
 
 const Search = () => {
-  const [searchState, setSearchState] = useState(0)
+  const [searchState, setSearchState] = useState(1)
   const [searchWord, setSearchWord] = useState(null)
   const searchInput = useRef()
   const handleSearch = () => {
@@ -68,6 +70,7 @@ const Search = () => {
   useEffect(()=> {
     if (searchWord) {
       console.log(searchWord)
+      setSearchState(1);
     }
   }, [searchWord])
 
@@ -77,10 +80,11 @@ const Search = () => {
       <SearchSection>
         <SearchInput ref={searchInput} placeholder='검색어를 입력해주세요'/>
         <SearchButton onClick={handleSearch}>
-          검색
+          <img src={searchIcon}/>
         </SearchButton>
       </SearchSection>
       {searchState === 0 && <SearchHistory/>}
+      {searchState === 1 && <SearchResults/>}
     </div>
   )
 }
