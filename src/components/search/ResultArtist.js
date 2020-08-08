@@ -30,13 +30,31 @@ const ArtistIntro = styled(RowContents)`
   padding: 10px 18px 12px 0px;
 `
 
+const FollowButton = styled.button`
+  position: absolute;
+  margin-top: 5px;
+  right: 20px;
+  width: 66px;
+  height: 24px;
+  background: #322FA0 0% 0% no-repeat padding-box;
+  border-radius: 12px 4px 12px 12px;
+  opacity: 1;
+  border: none;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+`
 
 export default (props) => {
   const {id, img, name, field1, field2, introduction, isFollowing} = props
+  const clickFollow = () => {
+
+  }
   return(
     <RowBody>
       <ArtistImage><img src={img}/></ArtistImage>
       <RowText>
+        {!isFollowing && <FollowButton onClick={clickFollow}>+Follow</FollowButton>}
         <ArtistName><img src={artistIcon}/>&nbsp;{name}</ArtistName>
         <ArtistField>{field1} ・ {field2}</ArtistField>
         <ArtistIntro>{introduction}</ArtistIntro>
