@@ -1,5 +1,8 @@
+@import url("//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css");
+
 .App {
   text-align: center;
+  font-family: 'Nanum Square';
 }
 
 .App-logo {
