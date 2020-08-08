@@ -1,6 +1,8 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import ResultRowWM from "./ResultRowWM";
+import ResultArtist from "./ResultArtist";
 
 const SearchBody = styled.div`
   margin-top: 8px;
@@ -65,13 +67,20 @@ const SearchCategory = (props) => {
 }
 
 export default () => {
-  const [selectTab, setSelectTab] = useState(0);
+  const [selectTab, setSelectTab] = useState(2);
   useEffect(()=>{
   }, [selectTab])
   return (
     <div style={{backgroundColor: '#F0F0F6', opacity: 1}}>
       <SearchBody>
         <SearchCategory selectTab={selectTab} setSelectTab={setSelectTab}/>
+        {selectTab !== 2 && <ResultRowWM title='name' contents='작품 글에도 야가 들어가지롱 작품 글에도 야가 들어가지롱 작품 글에도 야가... 들어가지롱 작 ...품 글에도 야가 들어가지롱 작품 글에도'
+                                         view={900} like={561} writer='김따미'/>}
+        {selectTab !== 2 && <ResultRowWM title='name' contents='작품 글에도 야가 들어가지롱 작품 글에도 야가 들어가지롱 작품 글에도 야가... 들어가지롱 작 ...품 글에도 야가 들어가지롱 작품 글에도'
+                                         view={900} like={561} writer='김따미'/>}
+        {selectTab === 2 && <ResultArtist name='김따미' field1='산업 디자인' field2='공간 디자인'
+                                          introduction='작품 글에도 야가 들어가지롱 작품 글에도 야가 들어가지롱 작품 글에도 야가... 들어가지롱 작 ...품 글에도 야가 들어가지롱 작품 글에도'
+          />}
       </SearchBody>
     </div>
   )
