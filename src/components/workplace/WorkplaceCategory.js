@@ -29,8 +29,8 @@ const Category = (props) => {
   )
 }
 
-export default () => {
-  const [selectTab, setSelectTab] = useState(0);
+export default (props) => {
+  const {selectTab, setSelectTab} = props
   return(
     <WorkplaceCategory>
       <Category selectTab={selectTab} id={0} title='전체분야' count={5} setSelectTab={setSelectTab}/>
