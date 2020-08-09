@@ -8,4 +8,5 @@ const getSplashImage = (page = 1) => {
         });
 };
 
-export {getSplashImage};
+
+export {getSplashImage};    
