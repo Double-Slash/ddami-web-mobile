@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import NavbarTemp from "../components/Navbar-temp";
-import Navbar from "../components/common/navigation/Navbar";
+import Navbar from "../components/common/RootNav";
 
 function Main() {
     return(

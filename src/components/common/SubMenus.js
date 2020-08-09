@@ -1,5 +1,4 @@
 import React from 'react';
-import Search from './Search';
 import {Link, Route} from 'react-router-dom';
 
 import Work from './SubMenu/Work';
