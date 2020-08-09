@@ -30,7 +30,7 @@ const ArtistIntro = styled(RowContents)`
   padding: 10px 18px 12px 0px;
 `
 
-const FollowButton = styled.button`
+export const FollowButton = styled.button`
   position: absolute;
   margin-top: 5px;
   right: 20px;

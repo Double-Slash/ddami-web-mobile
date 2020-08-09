@@ -22,7 +22,11 @@ const Image = styled.img`
 `
 
 export default (props) => {
+  const { history } = props
   const [selectTab, setSelectTab] = useState(0);
+  const handleClickImage = (id) => {
+    history.push('/') // image click -> routing
+  }
   return(
     <ListBody>
       <WorkplaceCategory selectTab={selectTab} setSelectTab={setSelectTab}/>

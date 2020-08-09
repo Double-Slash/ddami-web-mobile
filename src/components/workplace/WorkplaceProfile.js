@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import ModifyButton from "./ModifyButton";
+import { FollowButton as FB } from "../search/ResultArtist";
 
 const ProfileBody = styled.div`
   display: flex;
-  padding: 20px;
+  padding: 20px 0px 0px 20px;
   font-size: 13px;
-  color: #4D4D4D;
+  color: #3C3C3C;
   border-radius: 0px 0px 0px 16px;
   background-color: #FFFFFF;
 `
 const ProfileImage = styled.div`
-  width: 88px;
-  height: 88px;
-  background-color: black;
+  width: 92px;
+  height: 92px;
+  background-color: #61dafb;
   border-radius: 100%;
-  box-shadow: 0px 3px 5px #0000001A;
+  box-shadow: 0px 3px 5px #F0F0F0;
 `
 
 const Profile = styled.div`
@@ -23,10 +23,12 @@ const Profile = styled.div`
   flex-direction: column;
   padding-left: 20px;
   padding-top: 5px;
-  width: calc(100vh-88px);
 `
 
 const ProfileInformation = styled.div`
+  width: calc(100vw - 140px);
+  border-bottom: 1px solid #F0F0F0;
+  padding-bottom: 10px;
 `
 
 const Name = styled.span`
@@ -40,22 +42,32 @@ const Id = styled.span`
   color: #BBBBBB;
 `
 
-const Department = styled.div`
+const Major = styled.div`
   color: #808080;
   margin: 5px 0px;
 `
 
-const Major = styled.div`
+const Field = styled.div`
   font-size: 12px;
 `
 
 const ProfileFollow = styled.div`
   margin: 15px 0px;
+  position: relative;
 `
 
+const FollowButton = styled(FB)`
+  top: -8px;
+  right: 7px;
+`
+
+const ModifyButton = styled(FB)`
+  top: -85px;
+  right: 7px;
+`
 
 const WorkPlaceProfile = (props) => {
-  const {name, userId, major, field1, field2, follower, following} = props
+  const {name, userId, major, field1, field2, follower, following, isFollowing} = props
   return(
     <ProfileBody>
       <ProfileImage/>
@@ -64,12 +76,15 @@ const WorkPlaceProfile = (props) => {
           <Name>{name}</Name>
           <Id>@{userId}</Id>
           {/*<ModifyButton/>*/}
-          <Department>{major}</Department>
-          <Major>{field1} ・ {field2}</Major>
+          <Major>{major}</Major>
+          <Field>{field1} ・ {field2}</Field>
         </ProfileInformation>
+
         <ProfileFollow>
           팔로워 15 ・
           팔로우 20
+          {!isFollowing && <FollowButton>+Follow</FollowButton>}
+          {isFollowing && <ModifyButton>+Modify</ModifyButton>}
         </ProfileFollow>
       </Profile>
     </ProfileBody>

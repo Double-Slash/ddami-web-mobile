@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import WorkPlace from "../components/workplace/Workplace";
 import Write from '../components/workplace/Write';
+import WorkDetail from "../components/workplace/WorkDetail";
 
 const WorkplacePage = (props) => {
   // const { match } = props
@@ -9,7 +10,8 @@ const WorkplacePage = (props) => {
 
   return(
     <>
-      <Route path='/workplace/:id' component={WorkPlace}/>
+      <Route exact path='/workplace/:ArtistId' component={WorkPlace}/>
+      <Route exact path='/workplace/work/:workId' component={WorkDetail}/>
       <Route exact path='/workplace/write' component={Write}/>
     </>
   )
