@@ -11,7 +11,7 @@ const postJoin = (Form) => {
   };
 //  회원가입 할 때 정보들을 담기
 const postInfo = (Form) =>{
-const onSubmitHandler = (e) => {
+  const onSubmitHandler = (e) => {
     e.preventDefault();
     const body = {
       id : ID,
@@ -22,13 +22,13 @@ const onSubmitHandler = (e) => {
       birth:Birth,
       phone:Phone 
     };
-    dispatch(loginUser(body))
+    fetch(loginUser(body))
       .then((res) => {
         console.log(res);
         if (res.payload.loginSuccess) {
           props.history.push("/");
         } else {
-          alert(res.payload.message);
+          alert("0");
         }
       })
       .catch((err) => {
@@ -36,6 +36,5 @@ const onSubmitHandler = (e) => {
       });
   };
 
-// 
 
 };
