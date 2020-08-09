@@ -77,15 +77,11 @@ const Form = styled.div`
     line-height:1.0em
 `;
 function Membership(props){
-/*    
-        const [Email, setEmail] = useState("");
-        const [Password, setPassword] = useState("");
-        const [Name, setName] = useState("");
-        const [ConfirmPasword, setConfirmPasword] = useState("");
+
     
     
 // 입력이 안되었을 때 폼이 넘어가는 걸 막아준다
-
+/*
 const emailTurnOn = (e) => {
     setEmail(e.currentTarget.value);
   };
@@ -105,9 +101,9 @@ const emailTurnOn = (e) => {
   const onSubmit = (e) => {
     e.preventDefault();
   };
-*/  
 
 
+*/
      
 //폼
     return (
@@ -117,7 +113,7 @@ const emailTurnOn = (e) => {
              이메일
             <Email type="text" name ="Eamil"/><br/>
             아이디 
-            <Id type = "text" /> <input type="submit" value= "중복확인" maxlength="15"/><br/>
+            <Id type = "text"/> <input type="submit" value= "중복확인" maxlength="15"/><br/>
             비밀번호
             <Password type = "text" type = "password" name = "password" maxlength="15"/><br/>
             비밀번호 확인
