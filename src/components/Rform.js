@@ -2,7 +2,7 @@
 
 // 회원가입 작동 
 const postJoin = (Form) => {
-    return fetch(" http://222.251.129.150", signup_info)
+    return fetch(" http://222.251.129.150", Form)
       .then(alert("1"))
       .then(this.props.history.push("/"))
       .catch(err => {
@@ -22,10 +22,10 @@ const postInfo = (Form) =>{
       birth:Birth,
       phone:Phone 
     };
-    fetch(loginUser(body))
+    fetch(Form(body))
       .then((res) => {
         console.log(res);
-        if (res.payload.loginSuccess) {
+        if (res.load.loginSuccess) {
           props.history.push("/");
         } else {
           alert("0");
