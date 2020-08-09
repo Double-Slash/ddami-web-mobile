@@ -67,7 +67,7 @@ const SearchCategory = (props) => {
 }
 
 export default () => {
-  const [selectTab, setSelectTab] = useState(2);
+  const [selectTab, setSelectTab] = useState(0);
   useEffect(()=>{
   }, [selectTab])
   return (

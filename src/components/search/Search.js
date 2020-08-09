@@ -59,7 +59,7 @@ const SearchButton = styled.div`
 `
 
 const Search = () => {
-  const [searchState, setSearchState] = useState(1)
+  const [searchState, setSearchState] = useState(0)
   const [searchWord, setSearchWord] = useState(null)
   const searchInput = useRef()
   const handleSearch = () => {

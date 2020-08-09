@@ -7,11 +7,15 @@ const ProfileBody = styled.div`
   padding: 20px;
   font-size: 13px;
   color: #4D4D4D;
+  border-radius: 0px 0px 0px 16px;
+  background-color: #FFFFFF;
 `
 const ProfileImage = styled.div`
   width: 88px;
   height: 88px;
   background-color: black;
+  border-radius: 100%;
+  box-shadow: 0px 3px 5px #0000001A;
 `
 
 const Profile = styled.div`
@@ -51,20 +55,20 @@ const ProfileFollow = styled.div`
 
 
 const WorkPlaceProfile = (props) => {
-
+  const {name, userId, major, field1, field2, follower, following} = props
   return(
     <ProfileBody>
       <ProfileImage/>
       <Profile>
         <ProfileInformation>
-          <Name>이실명</Name>
-          <Id>@id123</Id>
-          <ModifyButton/>
-          <Department>시각디자인학과</Department>
-          <Major>그래픽디자인 공간디자인</Major>
+          <Name>{name}</Name>
+          <Id>@{userId}</Id>
+          {/*<ModifyButton/>*/}
+          <Department>{major}</Department>
+          <Major>{field1} ・ {field2}</Major>
         </ProfileInformation>
         <ProfileFollow>
-          팔로워 15
+          팔로워 15 ・
           팔로우 20
         </ProfileFollow>
       </Profile>
