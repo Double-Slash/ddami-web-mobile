@@ -1,5 +1,8 @@
 # DDAMI - web (mobile)
-	
+
+### Development Stack
+- React.js
+
 ### Commit Message Convention
 
 ```

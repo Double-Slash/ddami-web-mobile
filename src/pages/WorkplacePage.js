@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import WorkPlace from "../components/workplace/Workplace";
 import Write from '../components/workplace/Write';
 import WorkDetail from "../components/workplace/WorkDetail";
-import Nav from '../components/common/RootNav'
+import Nav from '../components/common/DrawerLeft'
 
 const WorkplacePage = (props) => {
   // const { match } = props
