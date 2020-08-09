@@ -7,7 +7,11 @@ import {Provider} from "react-redux";
 import createStore from "./utils/store";
 import {createGlobalStyle} from 'styled-components';
 import Page from './pages';
-
+import Membership from './components/Membership';
+import Complete from './components/MembershipComplete';
+import AuthComplete from './components/MembershipAuthComplete';
+import Detail from './components/Detail';
+import Auth from './components/MembershipAuth'
 const store = createStore();
 const GlobalStyle = createGlobalStyle`
   body {
@@ -23,12 +27,7 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <Provider store={store}>
-      <GlobalStyle/>
-      <Page/>
-      {/*<Route exact path="/" component={Main} />*/}
-      {/*<ImageGrid/>*/}
-    </Provider>
+      <Auth></Auth>
   );
 }
 
