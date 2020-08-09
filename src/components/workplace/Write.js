@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import WriteTopBar from "./WriteTopBar";
 import Configure from "./Configure";
 import WriteBar from "./WriteBar";
 
@@ -9,29 +10,16 @@ const Line = styled.hr`
   margin: 0;
 `
 
-const WriteTop = styled.div`
-  padding: 10px;
-  display: flex;
-  color: #808080;
-  button: {
-    outline: none;
-    border: none;
-  }
-`
-
-const TemporarySave = styled.div`
-
-`
-
 const InputBody = styled.div`
-  padding: 10px 0px;
+  border-top-left-radius: 50px;
+  padding-top: 10px;
   width : 100%;
-  input {
+  input, textarea {
     outline: none;
-    width : auto;
+    width : 90%;
     display: block;
     border: none;
-    padding: 20px;
+    padding: calc(100vh-90%);
   }
 `
 
@@ -41,18 +29,17 @@ const TitleInput = styled.input`
   }
 `
 
-const ContentInput = styled.input`
+const ContentInput = styled.textarea`
   height: 60vh;
 `
 
-const Write = () => {
+const Write = styled.div`
+`
+
+export default () => {
   return(
-    <div>
-      <WriteTop>
-        <div>X</div>
-        <TemporarySave></TemporarySave>
-        <button>등록</button>
-      </WriteTop>
+    <Write>
+      <WriteTopBar/>
       <InputBody>
         <TitleInput placeholder='제목을 입력해주세요'/>
         <Line />
@@ -61,8 +48,6 @@ const Write = () => {
       <Line />
       <Configure/>
       <WriteBar/>
-    </div>
+    </Write>
   )
 }
-
-export default Write

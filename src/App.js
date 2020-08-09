@@ -11,6 +11,8 @@ import Page from './pages';
 const store = createStore();
 const GlobalStyle = createGlobalStyle`
   body {
+    color: #3C3C3C;
+    font-family: 'NanumSquare';
     height: 100vh;
     box-sizing: border-box;
     margin: 0;
