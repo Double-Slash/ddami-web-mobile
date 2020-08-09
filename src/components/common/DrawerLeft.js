@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import {  Link, Switch, Redirect } from "react-router-dom";
 import 'antd/dist/antd.css';
 import { Drawer, Button, Radio, Space, Tooltip } from 'antd';
-import Search from './Search'
-import menu from '../img/menu.svg';
-import search from '../img/search.svg';
+import menu from '../../static/icons/menu.svg';
+import search from '../../static/icons/search.svg';
 import DrawerProfile from './DrawerProfile';
 
 //  anti-design framework를 이용하여 제작했습니다. (일일이 기능 만드는게 어려워요ㅠㅠ)

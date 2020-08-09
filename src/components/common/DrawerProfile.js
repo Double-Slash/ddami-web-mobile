@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import profileImage from '../img/img-profile1-mid/img-profile1-mid.png';
 
 const ProfileSection = styled.div`
   background: deeppink;
@@ -31,7 +30,7 @@ const DrawerProfile = () => {
     return (
         <>
             <ProfileSection>
-                <ImgProfile src={profileImage} alt="프로필 사진" />
+                <ImgProfile alt="프로필 사진" />
                 <ProfileName>김따미</ProfileName>
                 <p>시각디자인과</p>
             </ProfileSection>

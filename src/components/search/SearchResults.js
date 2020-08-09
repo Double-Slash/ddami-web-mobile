@@ -35,7 +35,7 @@ const SearchSort = styled.div`
   display: flex;
   font-size: 13px;
   color: #4D4D4D;
-  width: 100px;
+  width: 150px;
   margin: auto;
   padding: 0px 20px;
 `
