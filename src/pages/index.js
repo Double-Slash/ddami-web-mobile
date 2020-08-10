@@ -23,4 +23,4 @@ export default (props) => (
         <Route path='/setting' component={Setting} />
         <Footer/>
     </>
-)
+);

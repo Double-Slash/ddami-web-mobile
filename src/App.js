@@ -1,7 +1,7 @@
-import React from 'react';
-import './App.css';
-import {createGlobalStyle} from 'styled-components';
-import Page from './pages';
+import React from "react";
+import "./App.css";
+import {createGlobalStyle} from "styled-components";
+import Page from "./pages";
 import {BrowserRouter} from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
