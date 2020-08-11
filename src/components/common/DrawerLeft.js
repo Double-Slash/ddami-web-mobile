@@ -76,7 +76,7 @@ const LinkSection = styled.div`
     padding-left: 52px;
     background: #E6E6FA;
     width: 230px;
-    height:492px;
+    height:564px; //해당 드로워가 꽉 차게 조정하였습니다. Dev Hyunho
     border-top-right-radius: 40px;
 `;
 
@@ -169,7 +169,7 @@ const DrawerLeft = () => {
             </SearchBar>
             <Alarm>
                 <Badge count={5}>
-                    <Link to="/search"><ImgAlarm src={alarmIcon} alt="알림"></ImgAlarm></Link>
+                    <Link to="/"><ImgAlarm src={alarmIcon} alt="알림"></ImgAlarm></Link>
                 </Badge>
             </Alarm>
 
