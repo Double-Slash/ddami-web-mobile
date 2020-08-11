@@ -35,9 +35,13 @@ const WorkImage = styled.div`
 `
 
 const Text = styled.div`
-  padding: 24px 21px 24px 18px;
+  padding: 0 21px 24px 18px;
   font-size: 15px;
   color: #3C3C3C;
+`
+
+const CclImage = styled.div`
+
 `
 
 export default () => {
@@ -49,9 +53,10 @@ export default () => {
           <WorkImage><img src='d'/></WorkImage>
         </ImageList>
         <Text>
-          중간에 글이 들어갈 수도 있고, 네이버 블로그 글쓰기를 참고하면 이해하기 조금 더 쉬울 듯 합니다.
+          중간에 글이 들어갈 수도 있고,<br/> 네이버 블로그 글쓰기를 참고하면 이해하기 조금 더 쉬울 듯 합니다.
         </Text>
       </WorkDetailContent>
+      {/*<CclImage><img src='../../static/image/ccl.png'/></CclImage>*/}
       <WorkComment/>
     </WorkDetailSection>
   )

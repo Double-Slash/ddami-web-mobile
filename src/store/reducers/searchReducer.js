@@ -1,8 +1,7 @@
-import * as types from './types';
+import * as types from '../types';
 
 const initialState = {
-  loading: false,
-  error: null,
+  data: {}
 };
 
 export default function(state = initialState, { type, payload }) {

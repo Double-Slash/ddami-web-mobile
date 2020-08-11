@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SearchHistory from "./SearchHistory";
 import SearchResults from "./SearchResults";
 import searchIcon from '../../static/icons/btn-search-enter.svg'
+import {connect, useSelector, useDispatch} from 'react-redux';
 
 export const SearchNav = styled.nav`
   position: fixed;
@@ -62,15 +63,18 @@ const Search = () => {
   const [searchState, setSearchState] = useState(0)
   const [searchWord, setSearchWord] = useState(null)
   const searchInput = useRef()
+  const searchStore = useSelector((store) => { return store.search })
+  const dispatch = useDispatch()
+
   const handleSearch = () => {
     const tempWord = searchInput.current.value
-    setSearchWord(tempWord);
+    setSearchWord(tempWord)
+    // dispatch('GET_SEARCH_AUTHOR',{author:'에'})
   }
-
   useEffect(()=> {
     if (searchWord) {
-      console.log(searchWord)
       setSearchState(1);
+
     }
   }, [searchWord])
 

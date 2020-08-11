@@ -1,8 +1,8 @@
 // redux/user/saga.js
 import {call, put, all, takeLatest} from 'redux-saga/effects';
 import {requestHandler} from "../lib/axios";
-import * as types from './types';
-import * as actions from './actions';
+import * as types from '../types';
+import * as actions from '../actions';
 
 function* getSearchAuthor(action) {
   try {
