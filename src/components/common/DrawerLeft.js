@@ -7,6 +7,7 @@ import { ClockCircleOutlined } from '@ant-design/icons';
 import menu from '../../static/icons/menu.svg';
 import searchIcon from '../../static/icons/btn-search-enter.svg'
 import alarmIcon from '../../static/icons/btn-alarm.svg'
+
 import DrawerProfile from './DrawerProfile';
 
 //  anti-design framework를 이용하여 제작했습니다. (일일이 기능 만드는게 어려워요ㅠㅠ)
