@@ -2,9 +2,11 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 import {  Link, Switch, Redirect } from "react-router-dom";
 import 'antd/dist/antd.css';
-import { Drawer, Button, Radio, Space, Tooltip } from 'antd';
+import { Drawer, Button, Radio, Space, Tooltip, Badge } from 'antd';
+import { ClockCircleOutlined } from '@ant-design/icons';
 import menu from '../../static/icons/menu.svg';
-import search from '../../static/icons/search.svg';
+import searchIcon from '../../static/icons/btn-search-enter.svg'
+import alarmIcon from '../../static/icons/btn-alarm.svg'
 import DrawerProfile from './DrawerProfile';
 
 //  anti-design framework를 이용하여 제작했습니다. (일일이 기능 만드는게 어려워요ㅠㅠ)
@@ -12,30 +14,31 @@ import DrawerProfile from './DrawerProfile';
 
 const Header = styled.header`
     display: flex;
-    justify-content:space-between;
+    //justify-content:space-between;
     background: #00b4d8;
     width: 100%;
-    height: 56px;
+    height: 60px;
 `;
 
 const ImgMenu = styled.img`
-    /* background: tomato; */
-    padding-left: 16px;
-    padding-top: 21px;
-    padding-bottom: 21px;
-    height: 56px;
-    width: 32px ;
+    //background: tomato;
+    padding-left: 18px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    height: 60px;
+    width: 32px;
 `;
 
 const Title = styled.div`
-    display: inline-block;
-    /* background: green; */
-    width: 200px;
-    height: 56px;
-    text-align: center;
-    padding-top: 19px;    
-    padding-bottom: 19px;
+    display: flex;
+    align-items: center;
+    margin-left: 17.62px; //기본 ant.css marginleft: 8px 입니다.
+    //background: green;
+    width: 218.38px;
+    height: 60px;
     h1 {
+        margin-bottom: 0;
+        //background: crimson;
         font-size: 18px;
         font-weight: bold;
     }
@@ -43,17 +46,28 @@ const Title = styled.div`
 
 const SearchBar = styled.div`
     display: inline-block;
-    width: 50px;
-    height: 56px;
-    /* background: greenyellow; */
+    width: 42.89px;
+    height: 60px;
+    //background: greenyellow;
 `;
 
 const ImgSearch = styled.img`
-    padding-top: 19px;
-    padding-bottom: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-right:16px;
-    height: 56px;
+    height: 60px;
     width: 35px;
+`;
+
+const Alarm = styled.div`
+    margin-top: 18px;
+    //background: coral;
+    height: 40px;
+    width:20px;
+`;
+
+const ImgAlarm = styled.img`
+
 `;
 
 const LinkSection = styled.div`
@@ -148,11 +162,17 @@ const DrawerLeft = () => {
             </Drawer>
             </Space>
             <Title>
-                <h1>따미마을</h1>
+                <h1>DDAMI</h1>
             </Title>
             <SearchBar>
-                <Link to="/search"><ImgSearch src={search} alt="검색"></ImgSearch></Link>
+                <Link to="/search"><ImgSearch src={searchIcon} alt="검색"></ImgSearch></Link>
             </SearchBar>
+            <Alarm>
+                <Badge count={5}>
+                    <Link to="/search"><ImgAlarm src={alarmIcon} alt="알림"></ImgAlarm></Link>
+                </Badge>
+            </Alarm>
+
         </Header>   
 
 
