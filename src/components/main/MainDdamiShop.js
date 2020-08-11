@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SellingArticle from "./SellingArticle";
+import {Link} from "react-router-dom";
 
 const DdamiShop = styled.div`
   top: 243px;
@@ -37,9 +38,10 @@ const Description = styled.p`
   margin-right: 23px;
 `;
 
-const MoreBtn = styled.a`
+const MoreBtn = styled(Link)`
   font-size: 12px;
   color: #808080;
+  text-decoration: none;
 `;
 
 const UnderLineWrapper = styled.div`
@@ -74,7 +76,7 @@ function MainDdamiShop() {
             <Header>
                 <Menu>따미샵</Menu>
                 <Description>미대생의 작품&재료 스토어</Description>
-                <MoreBtn>더보기 ></MoreBtn>
+                <MoreBtn to="/shop/pieces">더보기 ></MoreBtn>
             </Header>
             <UnderLineWrapper>
                 <UnderLineBlue/>
