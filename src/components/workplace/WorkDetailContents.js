@@ -14,19 +14,24 @@ const WorkDetailContent = styled.div`
 `
 
 const ImageList = styled.div`
-  overflow-x: scroll;
-  height: 276px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 276px;
+  height: 318px;
   padding: 21px 18px;
-  &:nth-child(n+2) {
-    margin-left: 14px;
-  }
 `
 
-const WorkImage = styled.img`
+const WorkImage = styled.div`
+  flex: 0 0 auto;
+  display: inline-block;
   white-space: nowrap;
   width: 276px;
   height: 276px;
   border-radius: 4px 12px 12px 12px;
+  background-color: #282c34;
+  margin-right: 14px;
 `
 
 const Text = styled.div`
@@ -40,8 +45,8 @@ export default () => {
     <WorkDetailSection>
       <WorkDetailContent>
         <ImageList>
-          <WorkImage/>
-          <WorkImage/>
+          <WorkImage><img src='d'/></WorkImage>
+          <WorkImage><img src='d'/></WorkImage>
         </ImageList>
         <Text>
           중간에 글이 들어갈 수도 있고, 네이버 블로그 글쓰기를 참고하면 이해하기 조금 더 쉬울 듯 합니다.

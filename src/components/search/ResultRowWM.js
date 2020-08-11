@@ -62,12 +62,12 @@ const WriteImage = styled.img`
 
 const RowView = styled.div`
   width: 40px;
-  margin: auto;
+  margin-left: auto;
+  margin-top: 5px;
 `
 
 const RowLike = styled.div`
   width: 40px;
-  margin: auto;
 `
 
 export default (props) => {

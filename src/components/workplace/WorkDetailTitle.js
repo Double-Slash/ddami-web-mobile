@@ -25,7 +25,7 @@ const Field = styled.div`
 
 const Title = styled.p`
   width: calc(100vw - 80px);
-  padding: 0px 20px;
+  padding: 0px 0px 20px 13px;
   font: Bold 26px/37px NanumSquare;
   color: #101010;
   margin: 0;

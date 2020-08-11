@@ -11,6 +11,6 @@ export default (props) => (
     <Route exact path='/' component={Main} />
     <Route path='/workplace' component={WorkplacePage}/>
     <Route path='/search' component={Search}/>
-    {/*<Footer/>*/}
+    <Footer/>
   </>
 )
