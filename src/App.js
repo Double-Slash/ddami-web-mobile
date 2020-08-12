@@ -15,6 +15,8 @@ import Auth from './components/MembershipAuth'
 const store = createStore();
 const GlobalStyle = createGlobalStyle`
   body {
+    color: #3C3C3C;
+    font-family: 'NanumSquare';
     height: 100vh;
     box-sizing: border-box;
     margin: 0;
