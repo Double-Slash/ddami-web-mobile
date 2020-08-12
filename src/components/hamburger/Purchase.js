@@ -1,15 +1,15 @@
 import React from 'react';
 import DrawerLeft from "../common/DrawerLeft";
 
-const Like = () => {
+const Purchase = () => {
     return (
         <>
             <DrawerLeft />
             <div>
-                좋아요한 작품
+                판 구매 조회
             </div>
         </>
     );
 };
 
-export default Like;
+export default Purchase;

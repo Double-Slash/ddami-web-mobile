@@ -1,15 +1,15 @@
 import React from 'react';
 import DrawerLeft from "../common/DrawerLeft";
 
-const Like = () => {
+const Subscribe = () => {
     return (
         <>
             <DrawerLeft />
             <div>
-                좋아요한 작품
+                찜한 목록
             </div>
         </>
     );
 };
 
-export default Like;
+export default Subscribe;

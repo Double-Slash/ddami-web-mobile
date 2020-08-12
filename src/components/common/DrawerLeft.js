@@ -137,18 +137,18 @@ const DrawerLeft = () => {
                         </LinkToText>
                         <LinkToMargintop />
                         <LinkToText>
-                            좋아요한 작품
+                            <Link to="/like">좋아요한 작품</Link>
                         </LinkToText>
                     </LinkToSection>
                     <LinktoTitleMargin />
                     <LinkTitle>따미샵</LinkTitle>
                     <LinkToSection>
                         <LinkToText>
-                            판구매 조회
+                            <Link to="/purchase">판구매 조회</Link>
                         </LinkToText>
                         <LinkToMargintop />
                         <LinkToText>
-                            찜한 목록
+                            <Link to="/subscribe">찜한 목록</Link>
                         </LinkToText>
                     </LinkToSection>
                     <LinktoTitleMargin />
@@ -158,7 +158,7 @@ const DrawerLeft = () => {
                             관심있는 활동
                         </LinkToText>
                     </LinkToSection>
-                    <LinkTitle>설정</LinkTitle>
+                    <Link to='/setting'><LinkTitle>설정</LinkTitle></Link>
                 </LinkSection>
             </Drawer>
             </Space>
