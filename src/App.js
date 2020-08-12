@@ -7,7 +7,7 @@ import {Provider} from "react-redux";
 import createStore from "./utils/store";
 import {createGlobalStyle} from 'styled-components';
 import Page from './pages';
-import Membership from './components/Membership';
+import Membership from './components/membership';
 import Complete from './components/MembershipComplete';
 import AuthComplete from './components/MembershipAuthComplete';
 import Detail from './components/Detail';

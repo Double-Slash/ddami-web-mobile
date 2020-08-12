@@ -2,10 +2,10 @@
 
 const Membership_URL = "/user/join";
 
-export function registerUser(submit) {
-    const data = request("Post", Membership_URL + "/", submit);
+export function registerUser(onsubmit) {
+    const data = request("Post", Membership_URL + "/", onsubmit);
     return {
-      type: String,
+      type: json,
       load: data,
     };
   }

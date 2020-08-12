@@ -14,13 +14,13 @@ const postInfo = (Form) =>{
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const body = {
-      id : ID,
-      email: Email,
-      password: Password,
-      name:userName, 
-      sex:Sex,
-      birth:Birth,
-      phone:Phone 
+      id : iD,
+      email: email,
+      password: password,
+      name:name, 
+      sex:sex,
+      birth:birth,
+      phone:phone 
     };
     fetch(Form(body))
       .then((res) => {

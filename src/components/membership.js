@@ -2,8 +2,6 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Provider, useDispatch} from "react-redux";
-
-
 const Email=styled.input`
 border: none;
 font-size: 1.0em;
@@ -79,37 +77,26 @@ const Form = styled.div`
 function Membership(props){
 
     
-    
-// 입력이 안되었을 때 폼이 넘어가는 걸 막아준다
-/*
-const emailTurnOn = (e) => {
-    setEmail(e.currentTarget.value);
-  };
-
-  const nameTurnOn = (e) => {
-    setName(e.currentTarget.value);
-  };
-
-  const passwordTurnOn = (e) => {
-    setPassword(e.currentTarget.value);
-  };
-
-  const confirmPwTurnOn = (e) => {
-    setConfirmPasword(e.currentTarget.value);
-  };
 
   const onSubmit = (e) => {
     e.preventDefault();
   };
 
+  const postJoin = (Form) => {
+    return fetch(" http://222.251.129.150", Form)
+      .then(alert("1"))
+      .then(this.props.history.push("/"))
+      .catch(err => {
+          throw alert("DB오류");
+      })
+  };
+  
 
-*/
-     
 //폼
     return (
-          //<Form onSubmit={onSubmit}>
+          //
           <div className = "Membership">
-          <Form>
+          <Form onSubmit={onSubmit}>
              이메일
             <Email type="text" name ="Eamil"/><br/>
             아이디 
