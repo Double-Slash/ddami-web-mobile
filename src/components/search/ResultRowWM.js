@@ -77,7 +77,7 @@ export default (props) => {
   }
   return(
     <RowBody onClick={onClickRow}>
-      <RowImage><img src='./ddd'/></RowImage>
+      <RowImage><img/></RowImage>
       <RowText>
         <RowTitle>{title}</RowTitle>
         <RowContents>{contents}</RowContents>

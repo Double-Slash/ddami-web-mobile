@@ -4,23 +4,23 @@ import {requestHandler} from "../lib/axios";
 import * as types from '../types';
 import * as actions from '../actions';
 
-function* getSearchAuthor(action) {
+function* getSearchAuthor({payload}) {
   try {
-    console.log(action)
-    // const userInfo: AuthLogin = yield call(requestHandler, action.payload)
+
     const { data } = yield call(requestHandler, {
       path: '/author/search',
-      method: 'get',
-      data: action.payload
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      // data: {...payload, list:0, count:5}
     })
     yield put(getSearchAuthor.success(data))
   } catch (e) {
     console.log(e);
-    // yield put(postAuthLoginAsync.failure(e))
+    yield put(getSearchAuthor.failure(e)) // yield 생략 -> infinite loop
   }
-
   yield put(actions.getSearchAuthor());
-  // yield push(routes.DASHBOARD); // if necessary redirect via push action provided by redux-saga
 }
 
 export default all([

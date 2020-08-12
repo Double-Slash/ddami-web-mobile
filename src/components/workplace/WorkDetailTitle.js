@@ -76,7 +76,7 @@ export default (props) => {
       <Title>작가가 지정한 제목 최대폭 지정으로 여러줄 표기</Title>
       <TitleBottom>
         <Artist>
-          <img src='dd'/>
+          <img/>
           김따미
         </Artist>
         <ViewAndLike>

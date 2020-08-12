@@ -31,13 +31,13 @@ export default (props) => {
     <ListBody>
       <WorkplaceCategory selectTab={selectTab} setSelectTab={setSelectTab}/>
       <ImageList>
-        <Image src='ddd'/>
-        <Image src='ddd'/>
-        <Image src='ddd'/>
-        <Image src='ddd'/>
-        <Image src='ddd'/>
-        <Image src='ddd'/>
-        <Image src='ddd'/>
+        {/*<Image src='ddd'/>*/}
+        {/*<Image src='ddd'/>*/}
+        {/*<Image src='ddd'/>*/}
+        {/*<Image src='ddd'/>*/}
+        {/*<Image src='ddd'/>*/}
+        {/*<Image src='ddd'/>*/}
+        {/*<Image src='ddd'/>*/}
       </ImageList>
     </ListBody>
   )
