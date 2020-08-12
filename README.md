@@ -24,10 +24,10 @@ Branch 이름은 기능별로 생성
     - `/work/:workId` : workId의 작업물 상세 페이지
     - `/write` : 작업실 글 작성하기
 - 햄버거 관련 페이지
-    - '/like' : 좋아요한 작품
-    - '/purchase' : 판구매 내역
-    - '/subscribe' : 찜한 목록
-    - '/setting' : 설정
+    - `/like` : 좋아요한 작품
+    - `/purchase` : 판구매 내역
+    - `/subscribe` : 찜한 목록
+    - `/setting` : 설정
 
 
 ### install
