@@ -62,12 +62,12 @@ const WriteImage = styled.img`
 
 const RowView = styled.div`
   width: 40px;
-  margin: auto;
+  margin-left: auto;
+  margin-top: 5px;
 `
 
 const RowLike = styled.div`
   width: 40px;
-  margin: auto;
 `
 
 export default (props) => {
@@ -77,7 +77,7 @@ export default (props) => {
   }
   return(
     <RowBody onClick={onClickRow}>
-      <RowImage><img src='./ddd'/></RowImage>
+      <RowImage><img/></RowImage>
       <RowText>
         <RowTitle>{title}</RowTitle>
         <RowContents>{contents}</RowContents>

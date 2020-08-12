@@ -1,14 +1,11 @@
 import React from 'react';
 import './App.css';
-import Main from "./pages/Main";
-import {Route} from "react-router-dom";
-import ImageGrid from "./components/ImageGrid";
 import {Provider} from "react-redux";
-import createStore from "./utils/store";
 import {createGlobalStyle} from 'styled-components';
 import Page from './pages';
+import {BrowserRouter} from "react-router-dom";
 
-const store = createStore();
+
 const GlobalStyle = createGlobalStyle`
   body {
     color: #3C3C3C;
@@ -25,12 +22,12 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <Provider store={store}>
+    <BrowserRouter>
       <GlobalStyle/>
       <Page/>
       {/*<Route exact path="/" component={Main} />*/}
       {/*<ImageGrid/>*/}
-    </Provider>
+    </BrowserRouter>
   );
 }
 

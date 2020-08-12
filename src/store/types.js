@@ -1,0 +1,1 @@
+export const GET_SEARCH_AUTHOR = 'GET_SEARCH_AUTHOR';

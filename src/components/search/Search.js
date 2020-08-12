@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import SearchHistory from "./SearchHistory";
 import SearchResults from "./SearchResults";
 import searchIcon from '../../static/icons/btn-search-enter.svg'
+import {connect, useSelector, useDispatch} from 'react-redux';
+import {GET_SEARCH_AUTHOR} from "../../store/types";
+import axios from 'axios';
 
 export const SearchNav = styled.nav`
   position: fixed;
@@ -62,14 +65,18 @@ const Search = () => {
   const [searchState, setSearchState] = useState(0)
   const [searchWord, setSearchWord] = useState(null)
   const searchInput = useRef()
-  const handleSearch = () => {
-    const tempWord = searchInput.current.value
-    setSearchWord(tempWord);
-  }
+  const searchStore = useSelector((store) => { return store.search })
+  const dispatch = useDispatch()
 
+  const handleSearch = async () => {
+    const tempWord = searchInput.current.value
+    setSearchWord(tempWord)
+    // const a = await axios.get('https://222.251.129.150/api/author/search')
+    // console.log(a);
+    dispatch({type: GET_SEARCH_AUTHOR, payload: {searchingBy: tempWord}})
+  }
   useEffect(()=> {
     if (searchWord) {
-      console.log(searchWord)
       setSearchState(1);
     }
   }, [searchWord])
