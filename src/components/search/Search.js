@@ -4,9 +4,8 @@ import styled from 'styled-components';
 import SearchHistory from "./SearchHistory";
 import SearchResults from "./SearchResults";
 import searchIcon from '../../static/icons/btn-search-enter.svg'
-import {connect, useSelector, useDispatch} from 'react-redux';
-import {GET_SEARCH_AUTHOR} from "../../store/types";
-import axios from 'axios';
+import {useSelector, useDispatch} from 'react-redux';
+import {getSearchAuthor, getSearchWork, setSearchWord} from "../../store/actions";
 
 export const SearchNav = styled.nav`
   position: fixed;
@@ -62,24 +61,16 @@ const SearchButton = styled.div`
 `
 
 const Search = () => {
-  const [searchState, setSearchState] = useState(0)
-  const [searchWord, setSearchWord] = useState(null)
   const searchInput = useRef()
-  const searchStore = useSelector((store) => { return store.search })
+  const { state, tab, word, sortingBy } = useSelector((store) => { return store.search })
   const dispatch = useDispatch()
 
   const handleSearch = async () => {
     const tempWord = searchInput.current.value
-    setSearchWord(tempWord)
-    // const a = await axios.get('https://222.251.129.150/api/author/search')
-    // console.log(a);
-    dispatch({type: GET_SEARCH_AUTHOR, payload: {searchingBy: tempWord}})
+    await dispatch(setSearchWord(tempWord))
+    dispatch(getSearchWork({sortingBy}))
+    dispatch(getSearchAuthor({sortingBy}))
   }
-  useEffect(()=> {
-    if (searchWord) {
-      setSearchState(1);
-    }
-  }, [searchWord])
 
   return(
     <div>
@@ -90,8 +81,7 @@ const Search = () => {
           <img src={searchIcon}/>
         </SearchButton>
       </SearchSection>
-      {searchState === 0 && <SearchHistory/>}
-      {searchState === 1 && <SearchResults/>}
+      {state === 'pending' ? <SearchHistory/> : <SearchResults/>}
     </div>
   )
 }
