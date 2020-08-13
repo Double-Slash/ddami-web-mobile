@@ -81,7 +81,7 @@ const Search = () => {
           <img src={searchIcon}/>
         </SearchButton>
       </SearchSection>
-      {state === 'pending' ? <SearchHistory/> : <SearchResults/>}
+      {state === 'pending' && word === null ? <SearchHistory/> : <SearchResults/>}
     </div>
   )
 }

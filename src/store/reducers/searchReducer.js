@@ -4,7 +4,7 @@ const initialState = {
   tab: 0,
   word: null,
   sortingBy: "D",
-  state: 'success',
+  state: 'pending',
   authorData: [],
   pieceData: []
 };
