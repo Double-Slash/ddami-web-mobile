@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {RowBody, RowText, RowContents} from "./ResultRowWM";
 import artistIcon from '../../static/icons/certification-mark.svg'
 
+
 const ArtistImage = styled.div`
   padding: 24px 18px;
   & > img {
