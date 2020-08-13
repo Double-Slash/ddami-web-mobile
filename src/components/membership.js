@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Provider, useDispatch} from "react-redux";
+import Complete from './pages/complete';
+
 const Email=styled.input`
 border: none;
 font-size: 1.0em;
@@ -74,15 +76,9 @@ const Form = styled.div`
     margin-top:1.5em;
     line-height:1.0em
 `;
-function Membership(props){
+function Membership(){
 
-    
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const postJoin = (Form) => {
+  const onSubmit = (Form) => {
     return fetch(" http://222.251.129.150", Form)
       .then(alert("1"))
       .then(this.props.history.push("/"))
@@ -90,7 +86,7 @@ function Membership(props){
           throw alert("DB오류");
       })
   };
-  
+
 
 //폼
     return (
@@ -129,7 +125,7 @@ function Membership(props){
             휴대번호/인증번호<br/>
             <Phone type="text"/><input type="submit" value="인증번호 받기"/>
             <Passnumber type="text" placeholder="인증번호를 입력하세요"/><br/>
-            <button type="submit">회원가입</button>
+            <button type="submit" onClick={Complete}>회원가입</button>
           </Form>
           </div>
       );

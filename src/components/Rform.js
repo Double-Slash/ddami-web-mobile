@@ -9,6 +9,16 @@ const postJoin = (Form) => {
           throw alert("DB오류");
       })
   };
+// 
+  this.state = {
+    id:"",
+    email:"",
+    password:"",
+    name:"",
+    sex:"",
+    birth:"",
+    phone:""
+  }
 //  회원가입 할 때 정보들을 담기
 const postInfo = (Form) =>{
   const onSubmitHandler = (e) => {
@@ -35,6 +45,7 @@ const postInfo = (Form) =>{
         console.log("DB오류");
       });
   };
+
 
 
 };

@@ -2,7 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import MAuth from './MembershipComplete';
-import Cameras from '../images/camera.svg';
+import Cameras from '../static/icons/camera.svg';
+import Fileicon from '../static/icons/file.svg'
 const AuthForm = styled.div`
     margin-bottom:1.5em;
     margin-top:1.5em;
@@ -186,7 +187,7 @@ function MembershipAuth(){
             ※ 학생증 사진이나 개인정보(주민등록번호 필수)가 포함된 학교 포털사이트 화면 사진을 첨부해주세요
             </Student>
             <br/>
-            <Files placeholder = "파일을 첨부하세요"/><Camera src={Cameras}/><Clip/>
+            <Files placeholder = "파일을 첨부하세요"/><Camera src={Cameras}/><Clip src = {Fileicon}/>
             <br/>
             <Article>관심분야</Article>
             <br/>
