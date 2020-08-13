@@ -41,7 +41,7 @@ const Title = styled.div`
         margin-bottom: 0;
         //background: crimson;
         font-size: 18px;
-        font-weight: bold;
+        font-weight: bolder;
     }
 `;
 
