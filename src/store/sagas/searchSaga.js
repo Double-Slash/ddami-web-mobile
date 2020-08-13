@@ -7,7 +7,7 @@ import * as actions from '../actions';
 function* getSearchAuthor({payload}) {
   try {
     const { data } = yield call(requestHandler, {
-      path: '/author/search',
+      path: '/api/author/search',
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ function* getSearchAuthor({payload}) {
 function* getSearchWork({payload}) {
   try {
     const { data } = yield call(requestHandler, {
-      path: '/search',
+      path: '/api/search',
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'

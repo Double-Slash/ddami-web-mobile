@@ -60,3 +60,23 @@ export function getSearchWorkFail(){
     type: types.GET_SEARCH_WORK_FAIL,
   }
 }
+
+export function postWorkplaceMy(payload){
+  return {
+    type: types.POST_WORKPLACE_MY,
+    payload
+  }
+}
+
+export function postWorkplaceMySuccess(payload){
+  return {
+    type: types.POST_WORKPLACE_MY_SUCCESS,
+    payload
+  }
+}
+
+export function postWorkplaceMyFail(){
+  return {
+    type: types.POST_WORKPLACE_MY_FAIL,
+  }
+}
