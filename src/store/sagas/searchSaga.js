@@ -3,24 +3,23 @@ import {call, put, all, takeLatest} from 'redux-saga/effects';
 import {requestHandler} from "../lib/axios";
 import * as types from '../types';
 import * as actions from '../actions';
+import {GET_SEARCH_AUTHOR} from "../types";
 
 function* getSearchAuthor({payload}) {
   try {
-
     const { data } = yield call(requestHandler, {
       path: '/author/search',
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json'
       },
-      // data: {...payload, list:0, count:5}
+      // data: {...payload, list:0, count:5}/
     })
-    yield put(getSearchAuthor.success(data))
+    yield put(actions.getSearchAuthorSuccess(data));
   } catch (e) {
     console.log(e);
-    yield put(getSearchAuthor.failure(e)) // yield 생략 -> infinite loop
+    yield put(actions.getSearchAuthorFail(e)) // yield 생략 -> infinite loop
   }
-  yield put(actions.getSearchAuthor());
 }
 
 export default all([
