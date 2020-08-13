@@ -1,9 +1,8 @@
 // redux/user/saga.js
-import {call, put, all, takeLatest} from 'redux-saga/effects';
+import {call, put, all, takeLatest, select} from 'redux-saga/effects';
 import {requestHandler} from "../lib/axios";
 import * as types from '../types';
 import * as actions from '../actions';
-import {GET_SEARCH_AUTHOR} from "../types";
 
 function* getSearchAuthor({payload}) {
   try {
@@ -13,7 +12,9 @@ function* getSearchAuthor({payload}) {
       headers: {
         'Content-Type': 'application/json'
       },
-      // data: {...payload, list:0, count:5}/
+      params: {
+        ...payload
+      }
     })
     yield put(actions.getSearchAuthorSuccess(data));
   } catch (e) {
@@ -22,6 +23,26 @@ function* getSearchAuthor({payload}) {
   }
 }
 
+function* getSearchWork({payload}) {
+  try {
+    const { data } = yield call(requestHandler, {
+      path: '/search',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      params: {
+        ...payload
+      }
+    })
+    yield put(actions.getSearchWorkSuccess(data))
+  } catch (e) {
+    console.log(e)
+    yield put(actions.getSearchWorkFail())
+  }
+}
+
 export default all([
   takeLatest(types.GET_SEARCH_AUTHOR, getSearchAuthor),
+  takeLatest(types.GET_SEARCH_WORK, getSearchWork),
 ]);

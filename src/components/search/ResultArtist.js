@@ -47,18 +47,18 @@ export const FollowButton = styled.button`
 `
 
 export default (props) => {
-  const {id, img, name, field1, field2, introduction, isFollowing} = props
+  const { likeField, imageUrl, userId, stateMessage, followByMe} = props
   const clickFollow = () => {
 
   }
   return(
     <RowBody>
-      <ArtistImage><img src={img}/></ArtistImage>
+      <ArtistImage><img src={imageUrl}/></ArtistImage>
       <RowText>
-        {!isFollowing && <FollowButton onClick={clickFollow}>+Follow</FollowButton>}
-        <ArtistName><img src={artistIcon}/>&nbsp;{name}</ArtistName>
-        <ArtistField>{field1} ・ {field2}</ArtistField>
-        <ArtistIntro>{introduction}</ArtistIntro>
+        {!followByMe && <FollowButton onClick={clickFollow}>+Follow</FollowButton>}
+        <ArtistName><img src={artistIcon}/>&nbsp;{userId}</ArtistName>
+        <ArtistField>{likeField[0]} ・ {likeField[1]}</ArtistField>
+        <ArtistIntro>{stateMessage}</ArtistIntro>
       </RowText>
     </RowBody>
   )
