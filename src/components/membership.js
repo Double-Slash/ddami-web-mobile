@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Provider, useDispatch} from "react-redux";
 import Complete from './pages/complete';
-
+import Window from '../components/AuthWindow';
 const Email=styled.input`
 border: none;
 font-size: 1.0em;
@@ -123,7 +123,10 @@ function Membership(){
             성별<br/>
             여성 <input type="radio" value="여성"/> 남성 <input type="radio" value="남성"/><br/>
             휴대번호/인증번호<br/>
-            <Phone type="text"/><input type="submit" value="인증번호 받기"/>
+            <Phone type="text"/>
+            <Button variant="primary" onClick={handleShow}>
+              인증하기
+            </Button>
             <Passnumber type="text" placeholder="인증번호를 입력하세요"/><br/>
             <button type="submit" onClick={Complete}>회원가입</button>
           </Form>
