@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import profile from '../../static/icons/drawer-profile.PNG'
 
 const ProfileSection = styled.div`
-  background: deeppink;
+  //background: deeppink;
   margin-top: 48px;
   width: 100%;
   height: 152px;
@@ -11,6 +12,9 @@ const ProfileSection = styled.div`
 
 const ImgProfile = styled.img`
   background: tomato;
+  margin-bottom: 23px;
+  width: 84px;
+  height: 84px;
 `;
 
 const ProfileName = styled.div`
@@ -30,7 +34,7 @@ const DrawerProfile = () => {
     return (
         <>
             <ProfileSection>
-                <ImgProfile alt="프로필 사진" />
+                <ImgProfile  src={profile} alt="프로필 사진" />
                 <ProfileName>김따미</ProfileName>
                 <p>시각디자인과</p>
             </ProfileSection>
