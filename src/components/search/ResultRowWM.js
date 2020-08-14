@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import likeIcon from '../../static/icons/like.svg';
 import viewIcon from '../../static/icons/view.svg';
+import {useSelector} from "react-redux";
 
 export const RowBody = styled.div`
   height: 140px;
@@ -77,12 +78,14 @@ const RowLike = styled.div`
 `
 
 export default (props) => {
-  const { fileUrl, title, description, author: {userId, imageUrl}, views, likeCount, writerImage } = props
-  const onClickRow = () => {
-
+  const { tab } = useSelector((store) => { return store.search })
+  const { _id, fileUrl, title, description, author: {userId, imageUrl}, views, likeCount, writerImage } = props
+  const routeWork = () => {
+    if (tab === 0) props.history.push(`/workplace/work/${_id}`)
+    else if (tab === 1) props.history.push(`/workplace/material/${_id}`)
   }
   return(
-    <RowBody onClick={onClickRow}>
+    <RowBody onClick={routeWork}>
       <RowImage><img src={fileUrl[0]}/></RowImage>
       <RowText>
         <RowTitle>{title}</RowTitle>

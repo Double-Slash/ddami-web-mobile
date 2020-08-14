@@ -2,8 +2,13 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Provider, useDispatch} from "react-redux";
+<<<<<<< HEAD:src/components/user/join.js
 import Complete from './pages/complete';
 import WindowShow from './Authwindow';
+=======
+import Complete from '../../pages/complete';
+import WindowShow from '../Authwindow';
+>>>>>>> 7f414b3db8eb8f09d184b2a4f3ae0f9ad4f97cc0:src/components/user/membership.js
 
 const Email=styled.input`
 border: none;

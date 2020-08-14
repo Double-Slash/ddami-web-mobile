@@ -1,10 +1,9 @@
 import React from 'react';
-import DrawerLeft from "../common/DrawerLeft";
 import styled from "styled-components";
 import 'antd/dist/antd.css';
-import {Menu, Dropdown, Button} from 'antd';
+import {Button, Dropdown, Menu} from 'antd';
 
-import { EllipsisOutlined } from '@ant-design/icons';
+import {EllipsisOutlined} from '@ant-design/icons';
 
 const Body = styled.div`
   width: 100%;
@@ -100,7 +99,6 @@ const DropdownMenu = () => {
 const Subscribe = () => {
     return (
         <>
-            <DrawerLeft />
             <Body>
                 <LikeTitle>찜한 목록</LikeTitle>
                 <LikeSection>

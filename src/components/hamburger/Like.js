@@ -1,5 +1,4 @@
 import React from 'react';
-import DrawerLeft from "../common/DrawerLeft";
 import styled from "styled-components";
 
 import heartIcon from "../../static/icons/toggleBtn-like-on.svg"
@@ -90,7 +89,6 @@ const Heart = styled.img`
 const Like = () => {
     return (
         <>
-            <DrawerLeft />
             <Body>
                 <LikeTitle>좋아요한 작품 목록</LikeTitle>
                 <LikeSection>

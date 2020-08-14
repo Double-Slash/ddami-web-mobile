@@ -1,20 +1,29 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import WorkPlaceProfile from "./WorkplaceProfile";
 import WorkplaceList from "./WorkplaceList";
+import {useDispatch, useSelector} from "react-redux";
+import {postWorkplace, postWorkplaceMy} from "../../store/actions";
 
 const WorkplaceBody = styled.section`
   background-color: #F0F0F6;
 `
 
 const WorkPlace = (props) => {
+  const { type, workplace: {user} } = useSelector((store) => { return store.workplace })
+  const myPieces = user ? user.myPieces : []
+  const dispatch = useDispatch()
   const { match: { params } } = props
-  const { id } = params
+  const { ArtistId } = params
+  useEffect(() => {
+    if (ArtistId === 'my') dispatch(postWorkplaceMy({}))
+    else dispatch(postWorkplace({id: ArtistId}))
+  },[])
 
   return(
     <WorkplaceBody>
-      <WorkPlaceProfile name='이따미' userId='idid123' major='시각디자인학과' field1='그래픽 디자인' field2='영상 디자인'/>
-      <WorkplaceList/>
+      <WorkPlaceProfile {...props} type={type} {...user}/>
+      <WorkplaceList {...props} myPieces={myPieces} />
     </WorkplaceBody>
   )
 }
