@@ -51,8 +51,12 @@ export default (props) => {
   const clickFollow = () => {
 
   }
+  const routeWorkplace= () => {
+    props.history.push(`/workplace/${userId}`)
+  }
+
   return(
-    <RowBody>
+    <RowBody onClick={routeWorkplace}>
       <ArtistImage><img src={imageUrl}/></ArtistImage>
       <RowText>
         {!followByMe && <FollowButton onClick={clickFollow}>+Follow</FollowButton>}

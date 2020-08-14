@@ -12,6 +12,7 @@ const WorkplacePage = (props) => {
     <>
       <Route exact path='/workplace/:ArtistId' component={WorkPlace}/>
       <Route exact path='/workplace/work/:workId' component={WorkDetail}/>
+      <Route exact path='/workplace/material/:materialId' component={WorkDetail}/>
       <Route exact path='/workplace/write' component={Write}/>
     </>
   )

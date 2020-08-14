@@ -8,6 +8,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {getSearchAuthor, getSearchWork, setFooterInvisible, setFooterVisible, setSearchWord} from "../../store/actions";
 
 export const SearchNav = styled.nav`
+  z-index: 100;
   position: fixed;
   top: 0;
   display: flex;
@@ -22,9 +23,15 @@ export const SearchNav = styled.nav`
   }
   
   & > .nav-logo {
+    background-color: white;
     width: calc(100vw - 70px);
     margin: auto;
   }
+`
+
+const SearchDiv = styled.div`
+  background-color: #F0F0F6;
+  padding-bottom: 42px;
 `
 
 const SearchNavbar = () => {
@@ -37,6 +44,7 @@ const SearchNavbar = () => {
 }
 
 const SearchSection = styled.section`
+  z-index: 100;
   background-color: #FFFFFF;
   position: fixed;
   top: 60px;
@@ -52,7 +60,6 @@ const SearchInput = styled.input`
   outline: none;
   &::placeholder {
     color: #AAAAAA;
-    opacity: 1;
   }
 `
 
@@ -62,7 +69,7 @@ const SearchButton = styled.div`
   margin: auto;
 `
 
-const Search = () => {
+const Search = (props) => {
   const searchInput = useRef()
   const { state, tab, word, sortingBy } = useSelector((store) => { return store.search })
   const { state: footerState } = useSelector((store) => { return store.footer })
@@ -81,7 +88,7 @@ const Search = () => {
   },[])
 
   return(
-    <div>
+    <SearchDiv>
       <SearchNavbar/>
       <SearchSection>
         <SearchInput ref={searchInput} placeholder='검색어를 입력해주세요'/>
@@ -89,8 +96,8 @@ const Search = () => {
           <img src={searchIcon}/>
         </SearchButton>
       </SearchSection>
-      {state === 'pending' && word === null ? <SearchHistory/> : <SearchResults/>}
-    </div>
+      {state === 'pending' && word === null ? <SearchHistory {...props}/> : <SearchResults {...props}/>}
+    </SearchDiv>
   )
 }
 

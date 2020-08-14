@@ -131,7 +131,7 @@ const DrawerLeft = () => {
                     <LinkTitle>따미마을</LinkTitle>
                     <LinkToSection>
                         <LinkToText>
-                            내 작업실
+                            <Link to='/workplace/my'>내 작업실</Link>
                         </LinkToText>
                         <LinkToMargintop />
                         <LinkToText>

@@ -67,7 +67,7 @@ const ModifyButton = styled(FB)`
 `
 
 const WorkPlaceProfile = (props) => {
-  const {name, userId, major, field1, field2, follower, following, isFollowing} = props
+  const {name, userId, major, field1, field2, follower, following, isFollowing, isMine} = props
   return(
     <ProfileBody>
       <ProfileImage/>
@@ -83,8 +83,9 @@ const WorkPlaceProfile = (props) => {
         <ProfileFollow>
           팔로워 15 ・
           팔로우 20
-          {!isFollowing && <FollowButton>+Follow</FollowButton>}
-          {isFollowing && <ModifyButton>+Modify</ModifyButton>}
+          {!isMine && !isFollowing && <FollowButton>+Follow</FollowButton>}
+          {!isMine && isFollowing && <FollowButton>+Follow</FollowButton>}
+          {isMine && <ModifyButton>+Modify</ModifyButton>}
         </ProfileFollow>
       </Profile>
     </ProfileBody>
