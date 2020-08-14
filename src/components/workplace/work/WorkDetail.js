@@ -10,6 +10,7 @@ import {getWorkDetail} from "../../../store/actions";
 const WorkDetail = styled.section`
   padding-top: 18px;
   position: relative;
+  overflow-x: hidden;
 `
 
 const BgImage1 = styled.div`
