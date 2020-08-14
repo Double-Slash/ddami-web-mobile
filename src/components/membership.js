@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Provider, useDispatch} from "react-redux";
 import Complete from './pages/complete';
-import Window from '../components/AuthWindow';
+import WindowShow from '../components/AuthWindow';
+
 const Email=styled.input`
 border: none;
 font-size: 1.0em;
@@ -91,9 +92,9 @@ function Membership(){
     setEmail(e.currentTarget.value);
   };
 
-  const onPasswordHanlder = (e) => {
-    setPassword(e.currentTarget.value);
-  };
+   const onPasswordHanlder = (e) => {
+     setPassword(e.currentTarget.value);
+   };
 
   const onNameHandler = (e) => {
     setEmail(e.currentTarget.value);
@@ -108,7 +109,6 @@ function Membership(){
       })
   };
   const passwordRule = (Form) =>{
-    e.preventDefault();
     const isnumber = "^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$"
 // 최소 8 자, 최소 하나의 문자, 숫자 및 특수 문자가 포함되어야함
   } 
@@ -121,9 +121,9 @@ function Membership(){
              이메일
             <Email type="email" name ="Eamil" value={Email} onChange={onEmailHandler}/><br/>
             아이디 
-            <Id type = "text" value={Id} onChange={onIdHandler}/> <input type="submit" value= "중복확인" maxlength="15"/><br/>
+            <Id type = "text" value={Id} onChange={onIdHandler}/> <input type="submit" value= "중복확인" onClick={WindowShow}/><br/>
             비밀번호
-            <Password type = "password" name = "password" maxlength="15" value={Password} onChange={onPasswordHandler}/><br/>
+            <Password type = "password" maxlength="15" value={Password} onChange={onPasswordHanlder}/><br/>
             비밀번호 확인
             <Password type = "password" name = "passwordCheck" maxlength="15"/><br/>
             이름
@@ -147,12 +147,6 @@ function Membership(){
             <Year type="text" placeholder="일"/><br/> 
             성별<br/>
             여성 <input type="radio" value="여성"/> 남성 <input type="radio" value="남성"/><br/>
-            휴대번호/인증번호<br/>
-            <Phone type="text"/>
-            <Button variant="primary" onClick={handleShow}>
-              인증하기
-            </Button>
-            <Passnumber type="text" placeholder="인증번호를 입력하세요"/><br/>
             <button type="submit" onClick={Complete}>회원가입</button>
           </Form>
           </div>

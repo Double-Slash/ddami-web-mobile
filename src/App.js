@@ -7,11 +7,11 @@ import {Provider} from "react-redux";
 import createStore from "./utils/store";
 import {createGlobalStyle} from 'styled-components';
 import Page from './pages';
-import Membership from './components/membership';
 import Complete from './components/MembershipComplete';
 import AuthComplete from './components/MembershipAuthComplete';
 import Detail from './components/Detail';
 import Auth from './components/MembershipAuth'
+import Login from './Login/Login'
 const store = createStore();
 const GlobalStyle = createGlobalStyle`
   body {
@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-      <Auth></Auth>
+      <Login></Login>
   );
 }
 
