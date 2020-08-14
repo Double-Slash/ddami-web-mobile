@@ -1,13 +1,13 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import MembershipComplete from "../components/MembershipComplete";
+import MembershipComplete from "../components/user/MembershipComplete";
 
 function Complete() {
     return(
       <>
-        <Route exact path='/' component={MembershipComplete}/>
+        <Route exact path='../components/MembershipComplete' component={MembershipComplete} />
       </>
     );
 }
 
-export default Main;
+export default Complete;

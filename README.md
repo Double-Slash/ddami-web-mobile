@@ -22,6 +22,7 @@ Branch 이름은 기능별로 생성
 - `/login` : 로그인
 - `/search` : 검색
 - `/workplace` 작업실 관련
+    - `/my` : 내 작업실
     - `/:id` : 아이디가 id인 사용자의 작업실
     - `/work/:workId` : workId의 작업물 상세 페이지
     - `/write` : 작업실 글 작성하기

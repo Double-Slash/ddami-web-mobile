@@ -20,6 +20,26 @@ function* postWorkplaceMy({payload}) {
   }
 }
 
+function* postWorkplace({payload}) {
+  console.log('daaaa')
+  const {id} = payload
+  try {
+    const { data } = yield call(requestHandler, {
+      path: `/user/detail/${id}`,
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+    console.log(data)
+    yield put(actions.postWorkplaceSuccess(data));
+  } catch (e) {
+    console.log(e);
+    yield put(actions.postWorkplaceFail())
+  }
+}
+
 export default all([
   takeLatest(types.POST_WORKPLACE_MY, postWorkplaceMy),
+  takeLatest(types.POST_WORKPLACE, postWorkplace),
 ]);

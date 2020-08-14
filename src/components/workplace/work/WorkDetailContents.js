@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import WorkComment from "./WorkComment";
+import {useSelector} from "react-redux";
+import ccl from '../../../static/image/ccl.png';
 
 const WorkDetailSection = styled.div`
   margin-left: 18px;
@@ -24,14 +26,16 @@ const ImageList = styled.div`
 `
 
 const WorkImage = styled.div`
-  flex: 0 0 auto;
-  display: inline-block;
-  white-space: nowrap;
-  width: 276px;
-  height: 276px;
-  border-radius: 4px 12px 12px 12px;
-  background-color: #282c34;
-  margin-right: 14px;
+  & > img {
+    flex: 0 0 auto;
+    display: inline-block;
+    white-space: nowrap;
+    width: 276px;
+    height: 276px;
+    border-radius: 4px 12px 12px 12px;
+    background-color: #282c34;
+    margin-right: 14px;
+  }
 `
 
 const Text = styled.div`
@@ -41,22 +45,27 @@ const Text = styled.div`
 `
 
 const CclImage = styled.div`
-
+  margin: 0px 0px 24px 21px;
+  & > img {
+  width: 84px;
+  }
 `
 
 export default () => {
+  const { piece } = useSelector((store) => {return store.work.work })
+  const { fileUrl, description } = piece
+  //
   return(
     <WorkDetailSection>
       <WorkDetailContent>
         <ImageList>
-          <WorkImage><img src='d'/></WorkImage>
-          <WorkImage><img src='d'/></WorkImage>
+          { fileUrl.map((url,idx) => { return <WorkImage key={idx}><img src={url}/></WorkImage>})}
         </ImageList>
         <Text>
-          중간에 글이 들어갈 수도 있고,<br/> 네이버 블로그 글쓰기를 참고하면 이해하기 조금 더 쉬울 듯 합니다.
+          {description}
         </Text>
+        <CclImage><img src={ccl}/></CclImage>
       </WorkDetailContent>
-      {/*<CclImage><img src='../../static/image/ccl.png'/></CclImage>*/}
       <WorkComment/>
     </WorkDetailSection>
   )

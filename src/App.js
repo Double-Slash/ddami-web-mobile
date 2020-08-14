@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     box-sizing: border-box;
     margin: 0;
+    overflow-x: hidden;
     #root, .App{
       height: 100%;
       width: 100%;

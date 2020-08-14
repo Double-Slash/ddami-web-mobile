@@ -1,4 +1,3 @@
-// redux/user/saga.js
 import {call, put, all, takeLatest, select} from 'redux-saga/effects';
 import {requestHandler} from "../lib/axios";
 import * as types from '../types';

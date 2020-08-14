@@ -12,9 +12,9 @@ function Promotion() {
     return (
         <div>
             <Slider dots>
-                <Img>hi</Img>
-                <Img>hi</Img>
-                <Img>hi</Img>
+                <Img>
+                    <img src="/img-main-banner1.svg" alt="promotion" width="100%" height="100%"/>
+                </Img>
             </Slider>
         </div>
     );

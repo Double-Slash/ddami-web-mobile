@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import DrawerLeft from "../common/DrawerLeft";
 import AccountIcon from "../../static/icons/img-setting-accout.svg"
 import NoticeIcon from "../../static/icons/img-setting-notice.svg"
 import AboutIcon from "../../static/icons/img-setting-aboutddami.svg"
 
 import 'antd/dist/antd.css';
-import { Switch } from 'antd';
+import {Switch} from 'antd';
 
 const Body = styled.div`
   width: 100%;
@@ -96,7 +95,6 @@ const Version = styled.div`
 const Setting = () => {
     return (
         <>
-            <DrawerLeft />
             <Body>
                 <SectionTitleFirst>
                     <SectionImg src={AccountIcon} alt="계정아이콘"/>

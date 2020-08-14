@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import {CommentImage} from "./WorkComment";
-import enterIcon from '../../static/icons/enter.svg'
+import enterIcon from '../../../static/icons/enter.svg'
 
 const MyComment = styled.div`
   height: 84px;
