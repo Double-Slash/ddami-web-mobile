@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="463.625" height="202" viewBox="0 0 463.625 202">
+    <defs>
+        <style>
+            .a{fill:#fff;}.b{fill:#f3f2ff;}.b,.d{opacity:0.6;}.c{opacity:0.24;}.d,.e{fill:#c6c5ff;}.e{opacity:0.85;}.f,.g{fill:#232323;font-family:NanumSquareEB,
+            NanumSquare;}.f{font-size:21px;}.g{font-size:60px;}
+        </style>
+    </defs>
+    <g transform="translate(16 -60)">
+        <rect class="a" width="202" height="360" transform="translate(360 60) rotate(90)"/>
+        <path class="b"
+              d="M19.5,0h0A19.5,19.5,0,0,1,39,19.5v94A19.5,19.5,0,0,1,19.5,133H0a0,0,0,0,1,0,0V19.5A19.5,19.5,0,0,1,19.5,0Z"
+              transform="translate(117 223) rotate(90)"/>
+        <g class="c" transform="translate(-4.096 -484.817)">
+            <path class="d"
+                  d="M71.18,0h67.785a5.311,5.311,0,0,1,5.372,5.248V69.537c0,38.4-31.868,69.537-71.18,69.537H71.18C31.868,139.074,0,107.941,0,69.537S31.868,0,71.18,0Z"
+                  transform="translate(307.384 588.743)"/>
+            <path class="d"
+                  d="M6.868,0H94a91,91,0,0,1,91,91v0a91,91,0,0,1-91,91H91A91,91,0,0,1,0,91V6.868A6.868,6.868,0,0,1,6.868,0Z"
+                  transform="translate(210.096 544.817)"/>
+            <path class="e"
+                  d="M0,69.537C0,31.133,31.868,0,71.18,0h3.555A90.536,90.536,0,0,1,87.828,47.045a90.981,90.981,0,0,1-52.613,82.513C14.146,117.483,0,95.124,0,69.537Z"
+                  transform="translate(307.384 588.743)"/>
+        </g>
+        <text class="f" transform="translate(36 130)">
+            <tspan x="0" y="0">미대생의 땀방울</tspan>
+        </text>
+        <text class="g" transform="translate(36 190)">
+            <tspan x="0" y="0">DDAMI</tspan>
+        </text>
+    </g>
+</svg>

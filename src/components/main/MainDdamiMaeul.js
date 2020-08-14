@@ -11,13 +11,13 @@ const DdamiMaeul = styled.div`
   background-color: #ffffff;
   box-shadow: -6px 3px 20px #00000014;
   border-radius: 24px 0px 0px 0px;
-  margin-bottom: -68px;
 `;
 
 const Header = styled.div`
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  justify-content: space-between;
   width: 342px;
   height: 71px;
   margin-left: 24px;
@@ -28,13 +28,14 @@ const Menu = styled.p`
   font-weight: bold;
   color: #322fa0;
   margin-right: 10px;
+  margin-top: 28px;
 `;
 
 const Description = styled.p`
   font-size: 14px;
   font-weight: bold;
   color: #232323;
-  margin-right: 58px;
+  margin-right: 23px;
 `;
 
 const MoreBtn = styled.a`

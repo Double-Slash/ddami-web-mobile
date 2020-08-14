@@ -18,6 +18,7 @@ const Header = styled.div`
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  justify-content: space-between;
   width: 342px;
   height: 71px;
   margin-left: 24px;
@@ -28,6 +29,7 @@ const Menu = styled.p`
   font-weight: bold;
   color: #322fa0;
   margin-right: 10px;
+  margin-top: 28px;
 `;
 
 const Description = styled.p`
@@ -59,7 +61,7 @@ const UnderLineBlue = styled.div`
 `;
 
 const UnderLine = styled.div`
-  width: 258px;
+  width: 100%;
   height: 0.5px;
   background-color: #dbdbdb;
 `;

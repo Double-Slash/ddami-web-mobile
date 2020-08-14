@@ -129,7 +129,7 @@ function Detail(props) {
         <DetailWrapper>
             <WorkImgWrapper>
                 <img
-                    src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                    src="/dummy/22.png"
                     alt="dummy"
                     width="100%"
                 />
