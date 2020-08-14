@@ -12,11 +12,13 @@ import Footer from "../components/common/Footer";
 import DdamiShop from "../components/ddamishop/DdamiShop";
 import Detail from "../components/ddamishop/Detail";
 import Nav from '../components/common/DrawerLeft'
+import Membership from "../components/user/membership";
 
 export default (props) => (
     <>
         <Nav/>
         <Route exact path="/" component={Main}/>
+        <Route exact path="/join" component={mem}/>
         <Route path="/shop" component={DdamiShop}/>
         <Route path="/workplace" component={WorkplacePage}/>
         <Route path="/detail" component={Detail}/>
