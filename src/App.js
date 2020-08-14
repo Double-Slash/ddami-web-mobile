@@ -1,8 +1,7 @@
-import React from 'react';
-import './App.css';
-import {Provider} from "react-redux";
-import {createGlobalStyle} from 'styled-components';
-import Page from './pages';
+import React from "react";
+import "./App.css";
+import {createGlobalStyle} from "styled-components";
+import Page from "./pages";
 import {BrowserRouter} from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
@@ -17,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
       width: 100%;
     }
    }
+  *:focus { outline:none; }
 `;
 
 function App() {
@@ -24,8 +24,6 @@ function App() {
     <BrowserRouter>
       <GlobalStyle/>
       <Page/>
-      {/*<Route exact path="/" component={Main} />*/}
-      {/*<ImageGrid/>*/}
     </BrowserRouter>
   );
 }
