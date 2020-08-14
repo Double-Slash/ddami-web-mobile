@@ -18,7 +18,7 @@ export default (props) => (
     <>
         <Nav/>
         <Route exact path="/" component={Main}/>
-        <Route exact path="/join" component={mem}/>
+        <Route exact path="/join" component={Membership}/>
         <Route path="/shop" component={DdamiShop}/>
         <Route path="/workplace" component={WorkplacePage}/>
         <Route path="/detail" component={Detail}/>
