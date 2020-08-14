@@ -100,3 +100,10 @@ export function postWorkplaceFail(){
     type: types.POST_WORKPLACE_FAIL,
   }
 }
+
+export function setFooterVisible(payload){
+  return {
+    type: types.SET_FOOTER_VISIBLE,
+    payload
+  }
+}

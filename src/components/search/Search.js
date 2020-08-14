@@ -5,7 +5,7 @@ import SearchHistory from "./SearchHistory";
 import SearchResults from "./SearchResults";
 import searchIcon from '../../static/icons/btn-search-enter.svg'
 import {useSelector, useDispatch} from 'react-redux';
-import {getSearchAuthor, getSearchWork, setSearchWord} from "../../store/actions";
+import {getSearchAuthor, getSearchWork, setFooterInvisible, setFooterVisible, setSearchWord} from "../../store/actions";
 
 export const SearchNav = styled.nav`
   position: fixed;
@@ -37,7 +37,9 @@ const SearchNavbar = () => {
 }
 
 const SearchSection = styled.section`
-  margin-top: 60px;
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 60px;
   display: flex;
   height: 62px;
 `
@@ -63,6 +65,7 @@ const SearchButton = styled.div`
 const Search = () => {
   const searchInput = useRef()
   const { state, tab, word, sortingBy } = useSelector((store) => { return store.search })
+  const { state: footerState } = useSelector((store) => { return store.footer })
   const dispatch = useDispatch()
 
   const handleSearch = async () => {
@@ -71,6 +74,11 @@ const Search = () => {
     dispatch(getSearchWork({sortingBy}))
     dispatch(getSearchAuthor({sortingBy}))
   }
+
+  useEffect(()=>{
+    dispatch(setFooterVisible(false))
+    return () => dispatch(setFooterVisible(true))
+  },[])
 
   return(
     <div>

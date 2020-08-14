@@ -16,7 +16,7 @@ import DrawerProfile from './DrawerProfile';
 const Header = styled.header`
     display: flex;
     //justify-content:space-between;
-    background: #00b4d8;
+    background: #FFFFFF;
     width: 100%;
     height: 60px;
 `;
@@ -117,7 +117,6 @@ const DrawerLeft = () => {
     const onClose = () => setState(false);
 
     return (
-        <>
         <Header >
             <Space>
             <ImgMenu src={menu} alt="메뉴바" onClick={showDrawer}/>
@@ -174,10 +173,7 @@ const DrawerLeft = () => {
                 </Badge>
             </Alarm>
 
-        </Header>   
-
-
-        </>
+        </Header>
     );
 };
 

@@ -15,7 +15,7 @@ import Nav from '../components/common/DrawerLeft'
 
 export default (props) => (
     <>
-    <Nav/>
+        <Nav/>
         <Route exact path="/" component={Main}/>
         <Route path="/shop" component={DdamiShop}/>
         <Route path="/workplace" component={WorkplacePage}/>
