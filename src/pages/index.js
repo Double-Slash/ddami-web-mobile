@@ -9,18 +9,17 @@ import Purchase from "../components/hamburger/Purchase";
 import Subscribe from "../components/hamburger/Subscribe";
 import Setting from "../components/hamburger/Setting";
 import Footer from "../components/common/Footer";
-import Navbar from "../components/common/navigation/Navbar";
 import DdamiShop from "../components/ddamishop/DdamiShop";
 import Detail from "../components/ddamishop/Detail";
+import Nav from '../components/common/DrawerLeft'
 
 export default (props) => (
     <>
-        <Navbar/>
+    <Nav/>
         <Route exact path="/" component={Main}/>
         <Route path="/shop" component={DdamiShop}/>
         <Route path="/workplace" component={WorkplacePage}/>
         <Route path="/detail" component={Detail}/>
-        <Route path='/workplace' component={WorkplacePage}/>
         <Route path='/search' component={Search}/>
         <Route path='/like' component={Like} />
         <Route path='/purchase' component={Purchase} />

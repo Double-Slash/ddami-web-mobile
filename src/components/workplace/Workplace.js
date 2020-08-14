@@ -2,14 +2,20 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import WorkPlaceProfile from "./WorkplaceProfile";
 import WorkplaceList from "./WorkplaceList";
+import {useDispatch} from "react-redux";
+import {postWorkplace} from "../../store/actions";
 
 const WorkplaceBody = styled.section`
   background-color: #F0F0F6;
 `
 
 const WorkPlace = (props) => {
+  const dispatch = useDispatch();
   const { match: { params } } = props
-  const { id } = params
+  const { ArtistId } = params
+  useEffect(() => {
+    dispatch(postWorkplace({id: ArtistId}))
+  },[])
 
   return(
     <WorkplaceBody>

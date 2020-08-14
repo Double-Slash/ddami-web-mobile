@@ -80,3 +80,23 @@ export function postWorkplaceMyFail(){
     type: types.POST_WORKPLACE_MY_FAIL,
   }
 }
+
+export function postWorkplace(payload){
+  return {
+    type: types.POST_WORKPLACE,
+    payload
+  }
+}
+
+export function postWorkplaceSuccess(payload){
+  return {
+    type: types.POST_WORKPLACE_SUCCESS,
+    payload
+  }
+}
+
+export function postWorkplaceFail(){
+  return {
+    type: types.POST_WORKPLACE_FAIL,
+  }
+}
