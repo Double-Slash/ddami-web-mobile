@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 const Footer = styled.div`
   background-color: #F1EFFE;
