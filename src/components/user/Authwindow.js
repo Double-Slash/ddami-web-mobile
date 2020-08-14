@@ -5,6 +5,11 @@ import {Link} from 'react-router-dom';
 import {Provider, useDispatch} from "react-redux";
 import Complete from './pages/complete';
 
+
+const ModalWarapper = `
+
+`;
+
 function Window() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);

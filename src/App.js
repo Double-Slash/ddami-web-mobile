@@ -3,7 +3,7 @@ import "./App.css";
 import {createGlobalStyle} from "styled-components";
 import Page from "./pages";
 import {BrowserRouter} from "react-router-dom";
-
+import Login from "./components/user/Login";
 const GlobalStyle = createGlobalStyle`
   body {
     color: #3C3C3C;
@@ -22,10 +22,11 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <BrowserRouter>
-      <GlobalStyle/>
-      <Page/>
-    </BrowserRouter>
+   
+     <BrowserRouter>
+       <GlobalStyle/>
+       <Page/>
+     </BrowserRouter>
   );
 }
 

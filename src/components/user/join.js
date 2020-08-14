@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Provider, useDispatch} from "react-redux";
 import Complete from './pages/complete';
-import WindowShow from '../AuthWindow';
+import WindowShow from './Authwindow';
 
 const Email=styled.input`
 border: none;
