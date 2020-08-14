@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import SearchHistory from "./SearchHistory";
 import SearchResults from "./SearchResults";
 import searchIcon from '../../static/icons/btn-search-enter.svg'
+import {useSelector, useDispatch} from 'react-redux';
+import {getSearchAuthor, getSearchWork, setSearchWord} from "../../store/actions";
 
 export const SearchNav = styled.nav`
   position: fixed;
@@ -59,20 +61,16 @@ const SearchButton = styled.div`
 `
 
 const Search = () => {
-  const [searchState, setSearchState] = useState(0)
-  const [searchWord, setSearchWord] = useState(null)
   const searchInput = useRef()
-  const handleSearch = () => {
-    const tempWord = searchInput.current.value
-    setSearchWord(tempWord);
-  }
+  const { state, tab, word, sortingBy } = useSelector((store) => { return store.search })
+  const dispatch = useDispatch()
 
-  useEffect(()=> {
-    if (searchWord) {
-      console.log(searchWord)
-      setSearchState(1);
-    }
-  }, [searchWord])
+  const handleSearch = async () => {
+    const tempWord = searchInput.current.value
+    await dispatch(setSearchWord(tempWord))
+    dispatch(getSearchWork({sortingBy}))
+    dispatch(getSearchAuthor({sortingBy}))
+  }
 
   return(
     <div>
@@ -83,8 +81,7 @@ const Search = () => {
           <img src={searchIcon}/>
         </SearchButton>
       </SearchSection>
-      {searchState === 0 && <SearchHistory/>}
-      {searchState === 1 && <SearchResults/>}
+      {state === 'pending' && word === null ? <SearchHistory/> : <SearchResults/>}
     </div>
   )
 }

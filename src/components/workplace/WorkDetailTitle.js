@@ -25,7 +25,7 @@ const Field = styled.div`
 
 const Title = styled.p`
   width: calc(100vw - 80px);
-  padding: 0px 20px;
+  padding: 0px 0px 20px 13px;
   font: Bold 26px/37px NanumSquare;
   color: #101010;
   margin: 0;
@@ -76,7 +76,7 @@ export default (props) => {
       <Title>작가가 지정한 제목 최대폭 지정으로 여러줄 표기</Title>
       <TitleBottom>
         <Artist>
-          <img src='dd'/>
+          <img/>
           김따미
         </Artist>
         <ViewAndLike>

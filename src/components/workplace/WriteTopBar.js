@@ -42,7 +42,7 @@ const RegisterButton = styled.button`
 
 export default ({history}) => {
   const routeBack = () => {
-    history.push('/workplace')
+    history.push('/search')
   }
   return(
     <WriteTop>
