@@ -4,8 +4,7 @@ import SellingArticle from "./SellingArticle";
 import {Link} from "react-router-dom";
 
 const DdamiShop = styled.div`
-  top: 243px;
-  left: 18px;
+  margin-left: 18px;
   height: 622px;
   z-index: 2;
   background-color: #ffffff;

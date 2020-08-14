@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import styled from "styled-components";
 
 const ImgBox = styled.div`
@@ -46,9 +47,11 @@ const Price = styled.p`
 function SellingArticle() {
     return (
         <Wrapper>
-            <ImgBox>
-                <img src={process.env.PUBLIC_URL + "/dummy/22.png"} alt="dummy"/>
-            </ImgBox>
+            <Link to="/detail/1">
+                <ImgBox>
+                    <img src={process.env.PUBLIC_URL + "/dummy/22.png"} alt="dummy"/>
+                </ImgBox>
+            </Link>
             <ProductName>작품 이름 (한 줄 이상은 말을 줄입니다)</ProductName>
             <UniversityName>대학교 이름</UniversityName>
             <Price>15,000원</Price>

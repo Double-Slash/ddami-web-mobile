@@ -11,7 +11,7 @@ const ComponentWrapper = styled.div`
   border: solid #ffffff 1px;
   background-color: white;
   position: relative;
-  top: -44px;
+  margin-top: -44px;
   z-index: 2;
 `;
 
@@ -20,7 +20,7 @@ const ArticleWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
 `;
 
-function Component(props) {
+function ShopItems(props) {
     return (
         <ComponentWrapper>
             <Menu/>
@@ -36,4 +36,4 @@ function Component(props) {
     );
 }
 
-export default Component;
+export default ShopItems;

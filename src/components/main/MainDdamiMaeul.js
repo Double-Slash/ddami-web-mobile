@@ -5,7 +5,7 @@ import PromoteArticle from "./PromoteArticle";
 const DdamiMaeul = styled.div`
   z-index: 3;
   position: relative;
-  top: -68px;
+  margin-top: -68px;
   height: 622px;
   margin-left: 18px;
   background-color: #ffffff;

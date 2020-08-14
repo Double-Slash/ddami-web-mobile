@@ -23,8 +23,8 @@ const Point = styled.div`
   width: 100%;
   height: 16px;
   position: relative;
-  top: -24px;
-  left: 2px;
+  margin-top: -24px;
+  margin-left: 2px;
   z-index: -1;
 `;
 
