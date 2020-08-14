@@ -1,18 +1,10 @@
 import React from 'react';
 import './App.css';
-import Main from "./pages/Main";
-import {Route} from "react-router-dom";
-import ImageGrid from "./components/ImageGrid";
 import {Provider} from "react-redux";
-import createStore from "./utils/store";
 import {createGlobalStyle} from 'styled-components';
 import Page from './pages';
-import Membership from './components/membership';
-import Complete from './components/MembershipComplete';
-import AuthComplete from './components/MembershipAuthComplete';
-import Detail from './components/Detail';
-import Auth from './components/MembershipAuth'
-const store = createStore();
+import {BrowserRouter} from "react-router-dom";
+
 const GlobalStyle = createGlobalStyle`
   body {
     color: #3C3C3C;
@@ -29,7 +21,12 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-      <Auth></Auth>
+    <BrowserRouter>
+      <GlobalStyle/>
+      <Page/>
+      {/*<Route exact path="/" component={Main} />*/}
+      {/*<ImageGrid/>*/}
+    </BrowserRouter>
   );
 }
 
