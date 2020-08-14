@@ -11,11 +11,14 @@ const ProfileBody = styled.div`
   background-color: #FFFFFF;
 `
 const ProfileImage = styled.div`
+  & > img {
   width: 92px;
   height: 92px;
-  background-color: #61dafb;
+  background-color: #F0F0F0;
   border-radius: 100%;
   box-shadow: 0px 3px 5px #F0F0F0;
+  }
+  
 `
 
 const Profile = styled.div`
@@ -67,24 +70,24 @@ const ModifyButton = styled(FB)`
 `
 
 const WorkPlaceProfile = (props) => {
-  const {name, userId, major, field1, field2, follower, following, isFollowing} = props
+  const { userName, userId, major, likeField, imageUrl, follow, followerCount, type} = props
   return(
     <ProfileBody>
-      <ProfileImage/>
+      <ProfileImage><img src={imageUrl}/></ProfileImage>
       <Profile>
         <ProfileInformation>
-          <Name>{name}</Name>
+          <Name>{userName}</Name>
           <Id>@{userId}</Id>
-          {/*<ModifyButton/>*/}
           <Major>{major}</Major>
-          <Field>{field1} ・ {field2}</Field>
+          <Field>{likeField && likeField[0]} ・ {likeField && likeField[1]}</Field>
         </ProfileInformation>
 
         <ProfileFollow>
-          팔로워 15 ・
+          팔로워 {followerCount} ・
           팔로우 20
-          {!isFollowing && <FollowButton>+Follow</FollowButton>}
-          {isFollowing && <ModifyButton>+Modify</ModifyButton>}
+          {!type && !follow && <FollowButton>+Follow</FollowButton>}
+          {!type && follow && <FollowButton>+Follow</FollowButton>}
+          {type && <ModifyButton>+Modify</ModifyButton>}
         </ProfileFollow>
       </Profile>
     </ProfileBody>

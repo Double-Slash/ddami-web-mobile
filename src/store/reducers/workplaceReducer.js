@@ -2,9 +2,8 @@ import * as types from '../types';
 
 const initialState = {
   state: 'pending',
-  stateMy: 'pending',
+  type: 0,
   workplace: [],
-  workplaceMy: []
 };
 
 export default function(state = initialState, { type, payload }) {
@@ -12,34 +11,40 @@ export default function(state = initialState, { type, payload }) {
     case types.POST_WORKPLACE:
       return {
         ...state,
+        type: 0,
         state: 'pending'
       }
     case types.POST_WORKPLACE_SUCCESS:
       return {
         ...state,
         state: 'success',
+        type: 0,
         workplace: {...payload}
       }
     case types.POST_WORKPLACE_FAIL:
       return {
         ...state,
+        type: 0,
         state: 'fail'
       }
     case types.POST_WORKPLACE_MY:
       return {
         ...state,
-        stateMy: 'pending'
+        type: 1,
+        state: 'pending'
       }
     case types.POST_WORKPLACE_MY_SUCCESS:
       return {
         ...state,
         stateMy: 'success',
-        workplaceMy: {...payload}
+        type: 1,
+        workplace: {...payload}
       }
     case types.POST_WORKPLACE_MY_FAIL:
       return {
         ...state,
-        stateMy: 'fail'
+        type: 1,
+        state: 'fail'
       }
     default:
       return state;

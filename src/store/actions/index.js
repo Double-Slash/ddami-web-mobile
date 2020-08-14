@@ -100,3 +100,30 @@ export function postWorkplaceFail(){
     type: types.POST_WORKPLACE_FAIL,
   }
 }
+
+export function setFooterVisible(payload){
+  return {
+    type: types.SET_FOOTER_VISIBLE,
+    payload
+  }
+}
+
+export function getWorkDetail(payload){
+  return {
+    type: types.GET_WORK,
+    payload
+  }
+}
+
+export function getWorkDetailSuccess(payload){
+  return {
+    type: types.GET_WORK_SUCCESS,
+    payload
+  }
+}
+
+export function getWorkDetailFail(){
+  return {
+    type: types.GET_WORK_FAIL,
+  }
+}

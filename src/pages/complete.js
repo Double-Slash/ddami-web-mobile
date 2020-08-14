@@ -1,6 +1,6 @@
-import React,{MembershipComplete} from "react";
+import React from "react";
 import { Route } from "react-router-dom";
-import MembershipComplete from "../components/MembershipComplete";
+import MembershipComplete from "../components/user/MembershipComplete";
 
 function Complete() {
     return(
@@ -10,4 +10,4 @@ function Complete() {
     );
 }
 
-export default Main;
+export default Complete;

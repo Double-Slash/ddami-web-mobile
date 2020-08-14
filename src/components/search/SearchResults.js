@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {changeSearchTab, setSearchSort} from "../../store/actions";
 
 const Background = styled.div`
-  background-color: #F0F0F6;
+  margin-top: 60px;
   padding-top: 8px;
 `
 
@@ -69,14 +69,14 @@ const SearchCategory = (props) => {
   )
 }
 
-export default () => {
+export default (props) => {
   const { state, authorData, pieceData, tab } = useSelector((store) => { return store.search })
   return (
     <Background>
       <SearchBody>
         <SearchCategory/>
-        {tab === 0 && pieceData.map((props, idx)=> {return <ResultRowWM key={props._id} {...props}/> }) }
-        {tab === 2 && authorData.map((props, idx)=> {return <ResultArtist key={props._id} {...props}/> }) }
+        {tab === 0 && pieceData.map((data)=> {return <ResultRowWM key={props._id} {...props} {...data} /> }) }
+        {tab === 2 && authorData.map((data)=> {return <ResultArtist key={props._id} {...props} {...data} /> }) }
       </SearchBody>
     </Background>
   )

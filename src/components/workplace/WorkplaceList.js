@@ -22,22 +22,18 @@ const Image = styled.img`
 `
 
 export default (props) => {
-  const { history } = props
+  const { history, myPieces } = props
   const [selectTab, setSelectTab] = useState(0);
-  const handleClickImage = (id) => {
-    history.push('/') // image click -> routing
-  }
+  const handleClickImage = (id) => history.push(`work/${id}`)
+
   return(
     <ListBody>
       <WorkplaceCategory selectTab={selectTab} setSelectTab={setSelectTab}/>
       <ImageList>
-        {/*<Image src='ddd'/>*/}
-        {/*<Image src='ddd'/>*/}
-        {/*<Image src='ddd'/>*/}
-        {/*<Image src='ddd'/>*/}
-        {/*<Image src='ddd'/>*/}
-        {/*<Image src='ddd'/>*/}
-        {/*<Image src='ddd'/>*/}
+        { myPieces.map((piece) => {
+          const {_id, fileUrl} = piece
+          return <Image key={_id} src={fileUrl[0]} onClick={() => handleClickImage(_id)}/>
+        })}
       </ImageList>
     </ListBody>
   )
