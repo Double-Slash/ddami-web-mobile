@@ -1,18 +1,9 @@
-import React from 'react';
-import './App.css';
-import Main from "./pages/Main";
-import {Route} from "react-router-dom";
-import ImageGrid from "./components/ImageGrid";
-import {Provider} from "react-redux";
-import createStore from "./utils/store";
-import {createGlobalStyle} from 'styled-components';
-import Page from './pages';
-import Complete from './components/MembershipComplete';
-import AuthComplete from './components/MembershipAuthComplete';
-import Detail from './components/Detail';
-import Auth from './components/MembershipAuth'
-import Login from './Login/Login'
-const store = createStore();
+import React from "react";
+import "./App.css";
+import {createGlobalStyle} from "styled-components";
+import Page from "./pages";
+import {BrowserRouter} from "react-router-dom";
+
 const GlobalStyle = createGlobalStyle`
   body {
     color: #3C3C3C;
@@ -20,16 +11,21 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     box-sizing: border-box;
     margin: 0;
+    overflow-x: hidden;
     #root, .App{
       height: 100%;
       width: 100%;
     }
    }
+  *:focus { outline:none; }
 `;
 
 function App() {
   return (
-      <Login></Login>
+    <BrowserRouter>
+      <GlobalStyle/>
+      <Page/>
+    </BrowserRouter>
   );
 }
 
