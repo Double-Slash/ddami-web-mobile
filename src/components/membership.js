@@ -78,6 +78,27 @@ const Form = styled.div`
 `;
 function Membership(){
 
+  const [Email, setEmail] = useState("");
+  const [Id, setId] = useState("");
+  const [Password, setPassword] = useState("");
+  const [Name, setName] = useState("");
+
+  const onEmailHandler = (e) => {
+    setEmail(e.currentTarget.value);
+  };
+  
+  const onIdHandler = (e) => {
+    setEmail(e.currentTarget.value);
+  };
+
+  const onPasswordHanlder = (e) => {
+    setPassword(e.currentTarget.value);
+  };
+
+  const onNameHandler = (e) => {
+    setEmail(e.currentTarget.value);
+  };
+
   const onSubmit = (Form) => {
     return fetch(" http://222.251.129.150", Form)
       .then(alert("1"))
@@ -86,7 +107,11 @@ function Membership(){
           throw alert("DB오류");
       })
   };
-
+  const passwordRule = (Form) =>{
+    e.preventDefault();
+    const isnumber = "^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$"
+// 최소 8 자, 최소 하나의 문자, 숫자 및 특수 문자가 포함되어야함
+  } 
 
 //폼
     return (
@@ -94,15 +119,15 @@ function Membership(){
           <div className = "Membership">
           <Form onSubmit={onSubmit}>
              이메일
-            <Email type="text" name ="Eamil"/><br/>
+            <Email type="email" name ="Eamil" value={Email} onChange={onEmailHandler}/><br/>
             아이디 
-            <Id type = "text"/> <input type="submit" value= "중복확인" maxlength="15"/><br/>
+            <Id type = "text" value={Id} onChange={onIdHandler}/> <input type="submit" value= "중복확인" maxlength="15"/><br/>
             비밀번호
-            <Password type = "text" type = "password" name = "password" maxlength="15"/><br/>
+            <Password type = "password" name = "password" maxlength="15" value={Password} onChange={onPasswordHandler}/><br/>
             비밀번호 확인
-            <Password type="text" type = "password" name = "passwordCheck" maxlength="15"/><br/>
+            <Password type = "password" name = "passwordCheck" maxlength="15"/><br/>
             이름
-            <Name type="text"/><br/>
+            <Name type="text" value={Name} onChange={onNameHandler}/><br/>
             생년월일<br/>
             <Year type="text" placeholder="년(4자)"/> 
             <Select name="month">

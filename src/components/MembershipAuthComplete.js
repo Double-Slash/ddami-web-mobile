@@ -36,7 +36,7 @@ function AuthComplete(){
         <div name="authComplete">
             <Complete>인증이 완료되었습니다!</Complete>
             <Share>당신의 작업물을 공유하세요:)</Share>
-            <AroundDdami>따미마을 둘러보기</AroundDdami>
+            <AroundDdami onClick='/'>따미마을 둘러보기</AroundDdami>
         </div>
     );
 }
