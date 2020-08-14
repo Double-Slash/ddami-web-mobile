@@ -7,7 +7,6 @@ import Complete from './pages/complete';
 
 function Window() {
     const [show, setShow] = useState(false);
-  
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
@@ -20,10 +19,10 @@ function Window() {
           <Modal.Body><input type="text"/></Modal.Body>
           <Modal.Footer>
             <Button variant="second" onClick={handleClose}>
-              Close
+              닫기
             </Button>
             <Button variant="first" onClick={handleClose}>
-              Save Changes
+              입력완료
             </Button>
           </Modal.Footer>
         </Modal>
