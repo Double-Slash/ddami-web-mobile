@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {RowBody, RowText, RowContents} from "./ResultRowWM";
 import artistIcon from '../../static/icons/certification-mark.svg'
+import {useSelector} from "react-redux";
 
 
 const ArtistImage = styled.div`
@@ -47,12 +48,12 @@ export const FollowButton = styled.button`
 `
 
 export default (props) => {
-  const { likeField, imageUrl, userId, stateMessage, followByMe} = props
+  const { _id, likeField, imageUrl, userId, stateMessage, followByMe} = props
   const clickFollow = () => {
 
   }
   const routeWorkplace= () => {
-    props.history.push(`/workplace/${userId}`)
+    props.history.push(`/workplace/${_id}`)
   }
 
   return(

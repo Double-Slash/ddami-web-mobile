@@ -107,3 +107,23 @@ export function setFooterVisible(payload){
     payload
   }
 }
+
+export function getWorkDetail(payload){
+  return {
+    type: types.GET_WORK,
+    payload
+  }
+}
+
+export function getWorkDetailSuccess(payload){
+  return {
+    type: types.GET_WORK_SUCCESS,
+    payload
+  }
+}
+
+export function getWorkDetailFail(){
+  return {
+    type: types.GET_WORK_FAIL,
+  }
+}

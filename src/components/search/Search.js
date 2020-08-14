@@ -72,7 +72,6 @@ const SearchButton = styled.div`
 const Search = (props) => {
   const searchInput = useRef()
   const { state, tab, word, sortingBy } = useSelector((store) => { return store.search })
-  const { state: footerState } = useSelector((store) => { return store.footer })
   const dispatch = useDispatch()
 
   const handleSearch = async () => {

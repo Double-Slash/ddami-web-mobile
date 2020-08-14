@@ -45,6 +45,7 @@ const CclImage = styled.div`
 `
 
 export default () => {
+  //{ fileUrl.map((url,idx) => { return <img key={idx} src={url}/>})}
   return(
     <WorkDetailSection>
       <WorkDetailContent>
