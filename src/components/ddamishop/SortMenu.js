@@ -14,6 +14,7 @@ const SortMenuWrapper = styled.div`
 const SortItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 `;
 
 const VerticalBar = styled.p`

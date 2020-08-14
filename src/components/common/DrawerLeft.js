@@ -1,9 +1,8 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
-import {  Link, Switch, Redirect } from "react-router-dom";
+import {Link} from "react-router-dom";
 import 'antd/dist/antd.css';
-import { Drawer, Button, Radio, Space, Tooltip, Badge } from 'antd';
-import { ClockCircleOutlined } from '@ant-design/icons';
+import {Badge, Drawer, Space} from 'antd';
 import menu from '../../static/icons/menu.svg';
 import searchIcon from '../../static/icons/btn-search-enter.svg'
 import alarmIcon from '../../static/icons/btn-alarm.svg'
@@ -163,7 +162,9 @@ const DrawerLeft = () => {
             </Drawer>
             </Space>
             <Title>
-                <h1>DDAMI</h1>
+                <Link to="/">
+                    <h1>DDAMI</h1>
+                </Link>
             </Title>
             <SearchBar>
                 <Link to="/search"><ImgSearch src={searchIcon} alt="검색"></ImgSearch></Link>
