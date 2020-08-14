@@ -4,6 +4,8 @@ import styled from "styled-components";
 import 'antd/dist/antd.css';
 import { Tabs } from 'antd';
 import Like from "./Like";
+import DotIcon from "../../static/icons/dot_menu.svg";
+import PriceComponents from "./PriceComponents";
 
 const Body = styled.div`
   width: 100%;
@@ -22,7 +24,7 @@ const LikeTitle = styled.div`
 `;
 
 const LikeSection = styled.div`
-  background: coral;
+  background: #ffffff;
   width: 100%;
   height: 100%;
   border-top-left-radius: 20px;
@@ -34,7 +36,9 @@ const TagSection = styled.div`
   height: 28px;
   width: 100%;
   background: yellow;
+  margin-bottom: 31px;
 `;
+
 
 const { TabPane } = Tabs;
 
@@ -50,13 +54,14 @@ const Purchase = () => {
                             <TagSection>
                                 태그 관련 영역🙄
                             </TagSection>
-                            Content of Tab Pane 1
+                            <PriceComponents />
                         </TabPane>
                         <TabPane tab="구매 내역" key="2">
                             <TagSection>
                                 태그 관련 영역🙄
                             </TagSection>
-                            Content of Tab Pane 2
+                            <PriceComponents />
+                            <PriceComponents />
                         </TabPane>
                     </Tabs>
                 </LikeSection>
