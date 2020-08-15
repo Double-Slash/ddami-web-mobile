@@ -1,7 +1,7 @@
 //회원가입이 완료메세지
 import React from 'react';
 import styled from 'styled-components';
-import Membership from './join';
+import Membership from './Join';
 
 
 const Complete = styled.div`

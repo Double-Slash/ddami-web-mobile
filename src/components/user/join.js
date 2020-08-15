@@ -126,9 +126,6 @@ const postInfo = (Form) =>{
   };
 
 };
-
-
-
   */
   const [Email, setEmail] = useState("");
   const [Id, setId] = useState("");
@@ -159,7 +156,7 @@ const postInfo = (Form) =>{
           throw alert("DB오류");
       })
   };
-  const passwordRule = (Form) =>{
+  const passwordRule = () =>{
     const isnumber = "^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$"
 // 최소 8 자, 최소 하나의 문자, 숫자 및 특수 문자가 포함되어야함
   } 
@@ -172,7 +169,7 @@ const postInfo = (Form) =>{
              이메일
             <Email type="email" name ="Eamil" value={Email} onChange={onEmailHandler}/><br/>
             아이디 
-            <Id type = "text" value={Id} onChange={onIdHandler}/> <input type="submit" value= "중복확인" onClick={WindowShow}/><br/>
+            <Id type = "text" value={Id} onChange={onIdHandler}/><input type="submit" value= "중복확인" onClick={WindowShow}/><br/>
             비밀번호
             <Password type = "password" maxlength="15" value={Password} onChange={onPasswordHanlder}/><br/>
             비밀번호 확인
