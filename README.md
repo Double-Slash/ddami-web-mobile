@@ -31,6 +31,9 @@ Branch 이름은 기능별로 생성
     - `/purchase` : 판구매 내역
     - `/subscribe` : 찜한 목록
     - `/setting` : 설정
+- `/shop` : 따미샵
+    - `/pieces`  : 작품샵
+    - `/materials` : 재료샵
 
 
 ### install

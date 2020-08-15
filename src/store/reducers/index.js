@@ -12,9 +12,8 @@ const rootReducer = combineReducers({
   workplace,
   work,
   footer,
-  shop
+  shop,
   header,
-  footer
 })
 
 export default rootReducer
