@@ -8,6 +8,7 @@ import searchIcon from '../../static/icons/btn-search-enter.svg'
 import alarmIcon from '../../static/icons/btn-alarm.svg'
 
 import DrawerProfile from './DrawerProfile';
+import DrawerProfileNotUser from "./DrawerProfileNotUser";
 
 //  anti-design framework를 이용하여 제작했습니다. (일일이 기능 만드는게 어려워요ㅠㅠ)
 // 왼쪽에서 나오는 드로워 부분입니다.^^
@@ -126,7 +127,9 @@ const DrawerLeft = () => {
                 visible={state}
                 width={246}
                 >
-                <DrawerProfile />
+                {/*조건문 사용해서 user 경우 해당 프로필 보여주기*/}
+                <DrawerProfileNotUser />
+                {/*<DrawerProfile />*/}
                 <LinkSection>
                     <LinkTitle>따미마을</LinkTitle>
                     <LinkToSection>
