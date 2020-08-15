@@ -143,7 +143,7 @@ const Subscribe = () => {
                 <LikeTitle>찜한 목록</LikeTitle>
                 <LikeSection>
                     <SubscribeSection>
-                        <SubImg/>
+                        <SubImg src="http://222.251.129.150/uploads/material.jpg" alt="테스트"/>
                         <SubSection>
                             <SubTitle>
                                 <WorkTitle>
@@ -161,7 +161,7 @@ const Subscribe = () => {
                     </SubscribeSection>
 
                     <SubscribeSection>
-                        <SubImg/>
+                        <SubImg src="http://222.251.129.150/uploads/material.jpg" alt="테스트"/>
                         <SubSection>
                             <SubTitle>
                                 <WorkTitle>
@@ -179,7 +179,7 @@ const Subscribe = () => {
                     </SubscribeSection>
 
                     <SubscribeSection>
-                        <SubImg/>
+                        <SubImg src="http://222.251.129.150/uploads/material.jpg" alt="테스트"/>
                         <SubSection>
                             <SubTitle>
                                 <WorkTitle>
