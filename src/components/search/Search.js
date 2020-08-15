@@ -1,10 +1,9 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useRef, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import SearchHistory from "./SearchHistory";
 import SearchResults from "./SearchResults";
 import searchIcon from '../../static/icons/btn-search-enter.svg'
-import logo from '../../static/icons/img-profile1-small.png'
 import {useSelector, useDispatch} from 'react-redux';
 import {getSearchAuthor, getSearchWork, setFooterVisible, setSearchWord} from "../../store/actions";
 
@@ -39,11 +38,12 @@ const SearchDiv = styled.div`
   padding-bottom: 42px;
 `
 
-const SearchNavbar = () => {
+export const SearchNavbar = (props) => {
+  const {text} = props
   return (
     <SearchNav>
       <Link to='/'>X</Link>
-      <div className="nav-logo">DDAMI</div>
+      <div className="nav-logo">{text}</div>
     </SearchNav>
   )
 }
@@ -93,7 +93,7 @@ const Search = (props) => {
 
   return(
     <SearchDiv>
-      <SearchNavbar/>
+      <SearchNavbar text='DDAMI'/>
       <SearchSection>
         <SearchInput ref={searchInput} placeholder='검색어를 입력해주세요'/>
         <SearchButton onClick={handleSearch}>

@@ -1,137 +1,107 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Provider, useDispatch } from "react-redux";
-import Complete from "./complete";
-import WindowShow from "./Authwindow";
+import { useDispatch } from "react-redux";
+import Complete from "./JoinComplete";
+import { SearchNavbar } from "../search/Search";
+import {setFooterVisible, setHeaderVisible} from "../../store/actions";
 
-const EmailInput = styled.input`
-  border: none;
-  font-size: 1em;
-  border-bottom: solid 1px #ababab;
-  font-weight: bold;
-  height: 10%;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-`;
 const IdInput = styled.input`
-  border: none;
-  font-size: 1em;
-  border-bottom: solid 1px #ababab;
-  font-weight: bold;
-  height: 10%;
-  margin-bottom: 1.5em;
+  min-width: 72%;
 `;
+
 const PasswordInput = styled.input`
-  border: none;
-  font-size: 1em;
-  border-bottom: solid 1px #ababab;
-  font-weight: bold;
-  height: 10%;
-  margin-bottom: 1.5em;
+  min-width: 100%;
 `;
 
 const NameInput = styled.input`
-  border: none;
-  font-size: 1em;
-  border-bottom: solid 1px #ababab;
-  font-weight: bold;
-  height: 10%;
-  margin-bottom: 1.5em;
+  min-width: 100%;
 `;
 
 const YearInput = styled.input`
-  border: none;
-  border-bottom: solid 1px #ababab;
-`;
-const PhoneInput = styled.input`
-  border: none;
-  font-size: 1em;
-  border-bottom: solid 1px #ababab;
-  font-weight: bold;
-  margin-bottom: 1.5em;
-  float: left;
-`;
-
-const PassnumberInput = styled.input`
-  border: none;
-  font-size: 1em;
-  border-bottom: solid 1px #ababab;
-  font-weight: bold;
-  height: 10%;
-  margin-bottom: 1.5em;
+  width: 30%;
 `;
 
 const SelectInput = styled.select`
-  border: none;
-  font-size: 1em;
-  border-bottom: solid 1px #ababab;
-  font-weight: bold;
-  margin-bottom: 1.5em;
+  width: 30%;
 `;
 
 const Form = styled.div`
-  text-align: center;
-  margin-bottom: 1.5em;
-  margin-top: 1.5em;
-  line-height: 1em;
-`;
-function Join() {
-  /*
-const postJoin = (Form) => {
-    return fetch(" http://222.251.129.150", Form)
-      .then(alert("1"))
-      .then(this.props.history.push("/"))
-      .catch(err => {
-          throw alert("DB오류");
-      })
-  };
-// 
-  this.state = {
-    id:"",
-    email:"",
-    password:"",
-    name:"",
-    sex:"",
-    birth:"",
-    phone:""
+  margin-top: 60px;
+  padding: 30px 25px 0px 25px;
+  text-align: left;
+  
+  & > label {
+    display: block;
+    color: #232323;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 12px;
   }
-//  회원가입 할 때 정보들을 담기
-const postInfo = (Form) =>{
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-    const body = {
-      id : iD,
-      email: email,
-      password: password,
-      name:name, 
-      sex:sex,
-      birth:birth,
-      phone:phone 
-    };
-    fetch(Form(body))
-      .then((res) => {
-        console.log(res);
-        if (res.load.loginSuccess) {
-          props.history.push("/");
-        } else {
-          alert("0");
-        }
-      })
-      .catch((err) => {
-        console.log("DB오류");
-      });
-  };
+  
+  & > input , select {
+    border: none;
+    height: 28px;
+    margin-right: 3%;
+    border-bottom: 1px solid #282c34;
+    margin-bottom: 40px;
+    padding: 0px 0px 3.5px 4.5px;
+    font-size: 15px;
+    &::placeholder {
+      color: #BBBBBB;
+    }
+  }
+`;
 
-};
+const SubmitButton = styled.button`
+  width: 100%;
+  margin: 79px auto 0px auto;
+  background-color: #322FA0;
+  border-radius: 52px;
+  color: #FFFFFF;
+  font-size: 15px;
+  height: 44px;
+  border: none;
+`
 
+const CheckButton = styled.button`
+  height: 28px;
+  background-color: #4D4D4D;
+  border-radius: 6px;
+  color: #FFFFFF;
+  border: none;
+  font-size: 12px;
+  width: 77px;
+  margin-left: auto;
+`
+const Radio = styled.div`
+  display: flex;
+`
 
+const RadioInput = styled.input`
+  width: 22px;
+  height: 22px;
+  border-color: #AAAAAA;
+`
 
-  */
+const RadioText = styled.span`
+  margin: 0px 32px 0px 9.5px;
+`
+
+function Join() {
   const [Email, setEmail] = useState("");
   const [Id, setId] = useState("");
   const [Password, setPassword] = useState("");
   const [Name, setName] = useState("");
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(setFooterVisible(false))
+    dispatch(setHeaderVisible(false))
+    return () => {
+      dispatch(setHeaderVisible(true))
+      dispatch(setFooterVisible(true))
+    }
+  })
 
   const onEmailHandler = (e) => {
     setEmail(e.currentTarget.value);
@@ -159,69 +129,34 @@ const postInfo = (Form) =>{
         })
     );
   };
-  const passwordRule = (Form) => {
-    const isnumber =
-      "^(?=.*[A-Za-z])(?=.*d)(?=.*[$@$!%*#?&])[A-Za-zd$@$!%*#?&]{8,}$";
-    // 최소 8 자, 최소 하나의 문자, 숫자 및 특수 문자가 포함되어야함
-  };
 
-  //폼
   return (
     <div className="Membership">
+      <SearchNavbar text='회원가입'/>
       <Form onSubmit={onSubmit}>
-        이메일
-        <EmailInput
-          type="email"
-          name="Eamil"
-          value={Email}
-          onChange={onEmailHandler}
-        />
-        <br />
-        아이디
-        <IdInput type="text" value={Id} onChange={onIdHandler} />{" "}
-        <input type="submit" value="중복확인" onClick={WindowShow} />
-        <br />
-        비밀번호
+        <label>아이디</label>
+        <IdInput type="text" value={Id} onChange={onIdHandler} />
+        <CheckButton>중복 확인</CheckButton>
+        <label>비밀번호</label>
         <PasswordInput
           type="password"
           maxlength="15"
           value={Password}
           onChange={onPasswordHanlder}
         />
-        <br />
-        비밀번호 확인
-        <PasswordInput type="password" maxlength="15" />
-        <br />
-        이름
-        <NameInput type="text" value={Name} onChange={onNameHandler} />
-        <br />
-        생년월일
-        <br />
-        <YearInput type="text" placeholder="년(4자)" />
+        <label>비밀번호 확인</label><PasswordInput type="password" maxlength="15" />
+        <label>이름</label><NameInput type="text" value={Name} onChange={onNameHandler} />
+        <label>생년월일</label><YearInput type="number" placeholder="년(4자)" />
         <SelectInput name="month">
-          <option value="1월">1월</option>
-          <option value="2월">2월</option>
-          <option value="3월">3월</option>
-          <option value="4월">4월</option>
-          <option value="5월">5월</option>
-          <option value="6월">6월</option>
-          <option value="7월">7월</option>
-          <option value="8월">8월</option>
-          <option value="9월">9월</option>
-          <option value="10월">10월</option>
-          <option value="11월">11월</option>
-          <option value="12월">12월</option>
+          {[...Array(12).keys()].map((idx) => { return <option value={idx+1}>{idx+1}월</option>})}
         </SelectInput>
-        <YearInput type="text" placeholder="일" />
-        <br />
-        성별
-        <br />
-        여성 <input type="radio" value="여성" /> 
-        남성 <input type="radio" value="남성" />
-        <br />
-        <button type="submit" onClick={Complete}>
-          회원가입
-        </button>
+        <YearInput type="number" placeholder="일" />
+        <label>성별</label>
+        <Radio>
+          <RadioInput type="radio" value="여성" /><RadioText>여성</RadioText>
+          <RadioInput type="radio" value="남성" /><RadioText>남성</RadioText>
+        </Radio>
+        <SubmitButton type="submit" onClick={Complete}>가입하기</SubmitButton>
       </Form>
     </div>
   );
