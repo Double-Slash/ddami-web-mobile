@@ -10,4 +10,4 @@ function Complete() {
     );
 }
 
-export default Main;
+export default Complete;
