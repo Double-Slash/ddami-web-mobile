@@ -1,9 +1,9 @@
 // 미대생 인증 
 import React from 'react';
 import styled from 'styled-components';
-import MAuth from './MembershipComplete';
-import Cameras from '../static/icons/camera.svg';
-import Fileicon from '../static/icons/file.svg'
+import MAuth from './JoinComplete';
+import {ReactCompoenent as Cameras} from '../static/icons/camera.svg';
+import {ReactCompoenent as Fileicon} from '../static/icons/file.svg';
 const AuthForm = styled.div`
     margin-bottom:1.5em;
     margin-top:1.5em;
@@ -44,7 +44,6 @@ border: none;
 border-bottom: solid 1px #ababab;
 margin-right: 1.0em;
 margin-top: 1.5em;
-${'' /*  */}
 `;
 const SchoolNumber =styled.input`
 border: none;
