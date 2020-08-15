@@ -97,7 +97,7 @@ const Like = () => {
                 <LikeTitle>좋아요한 작품 목록</LikeTitle>
                 <LikeSection>
                     <WorkSection>
-                        <WorkImg/>
+                        <WorkImg src="http://222.251.129.150/uploads/1597128245912.jpg" alt="테스트"/>
                         <WorkTitleSection>
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
@@ -110,7 +110,7 @@ const Like = () => {
                     </WorkSection>
 
                     <WorkSection>
-                        <WorkImg/>
+                        <WorkImg src="http://222.251.129.150/uploads/1597128245912.jpg" alt="테스트"/>
                         <WorkTitleSection>
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
@@ -123,7 +123,7 @@ const Like = () => {
                     </WorkSection>
 
                     <WorkSection>
-                        <WorkImg/>
+                        <WorkImg src="http://222.251.129.150/uploads/1597128245912.jpg" alt="테스트"/>
                         <WorkTitleSection>
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
@@ -136,7 +136,7 @@ const Like = () => {
                     </WorkSection>
 
                     <WorkSection>
-                        <WorkImg/>
+                        <WorkImg src="http://222.251.129.150/uploads/1597128245912.jpg" alt="테스트"/>
                         <WorkTitleSection>
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
@@ -149,7 +149,7 @@ const Like = () => {
                     </WorkSection>
 
                     <WorkSection>
-                        <WorkImg/>
+                        <WorkImg src="http://222.251.129.150/uploads/1597128245912.jpg" alt="테스트"/>
                         <WorkTitleSection>
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
@@ -162,7 +162,7 @@ const Like = () => {
                     </WorkSection>
 
                     <WorkSection>
-                        <WorkImg/>
+                        <WorkImg src="http://222.251.129.150/uploads/1597128245912.jpg" alt="테스트"/>
                         <WorkTitleSection>
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>

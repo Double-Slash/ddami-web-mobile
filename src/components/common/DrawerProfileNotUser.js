@@ -35,7 +35,7 @@ const DrawerProfileNotUser = () => {
         <>
             <ProfileSection>
                 <ImgProfile  src={NotUserImg} alt="프로필 사진" />
-                <ProfileName>로그인</ProfileName>
+                <ProfileName><Link to="/login">로그인</Link></ProfileName>
                 <p>아직 회원이 아니신가요?</p>
             </ProfileSection>
 
