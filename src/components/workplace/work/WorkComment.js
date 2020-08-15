@@ -44,18 +44,25 @@ const CommentReply = styled.span`
   color: #808080;
 `
 
-const WorkComment = () => {
+const WorkComment = (props) => {
+  const { user, content, created } = props
+  const { imageUrl, userName } = user
+  console.log(imageUrl)
+  const convertFormat = (date) => {
+    if (date.length > 10) return `${date.slice(0,4)}.${date.slice(5,7)}.${date.slice(8,10)}`
+    else return ''
+  }
   const replyComment = () => {
 
   }
   return(
     <Comment>
       <CommentLine>
-        <CommentImage/>
+        <CommentImage src={imageUrl}/>
         <div>
-          <NickName>닉네임</NickName>
-          <CommentDate>2020.07.08</CommentDate>
-          <CommentText>진짜 멋있어요!</CommentText>
+          <NickName>{userName}</NickName>
+          <CommentDate>{convertFormat(created)}</CommentDate>
+          <CommentText>{content}</CommentText>
         </div>
         <CommentReply onClick={replyComment}>답글</CommentReply>
       </CommentLine>
@@ -71,8 +78,10 @@ export default () => {
   const { comments } = piece
   return (
     <CommentSection>
-      <WorkComment/>
-      <WorkComment/>
+      { comments.map((comment)=> {
+        const { _id } = comment
+        return <WorkComment key={_id} {...comment}/>
+      })}
       <MyComment/>
     </CommentSection>
   )

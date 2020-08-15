@@ -101,6 +101,13 @@ export function postWorkplaceFail(){
   }
 }
 
+export function setHeaderVisible(payload){
+  return {
+    type: types.SET_HEADER_VISIBLE,
+    payload
+  }
+}
+
 export function setFooterVisible(payload){
   return {
     type: types.SET_FOOTER_VISIBLE,

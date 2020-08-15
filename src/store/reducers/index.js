@@ -3,12 +3,14 @@ import search from './searchReducer';
 import workplace from './workplaceReducer';
 import work from './workReducer'
 import footer from './footerReducer';
+import header from './headerReducer';
 
 
 const rootReducer = combineReducers({
   search,
   workplace,
   work,
+  header,
   footer
 })
 

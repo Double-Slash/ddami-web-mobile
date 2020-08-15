@@ -10,6 +10,7 @@ import './antdStyle.css';
 
 import DrawerProfile from './DrawerProfile';
 import DrawerProfileNotUser from "./DrawerProfileNotUser";
+import {useSelector} from "react-redux";
 
 //  anti-design framework를 이용하여 제작했습니다. (일일이 기능 만드는게 어려워요ㅠㅠ)
 // 왼쪽에서 나오는 드로워 부분입니다.^^
@@ -111,77 +112,78 @@ const LinktoTitleMargin = styled.div`
 `;
 
 const DrawerLeft = () => {
-
-    // 상태를 알려주는 부분이야
     const [state, setState] = useState(false);
     const [placement, setPlacement] = useState('left');
-
-    // 이거는 onClick() 함수를 이용해서 상태를 변화줄려고 한거야
+    const { state: headerState } = useSelector((store) => {return store.header})
     const showDrawer = () => setState(true);
     const onClose = () => setState(false);
 
     return (
-        <Header >
-            <Space>
-            <ImgMenu src={menu} alt="메뉴바" onClick={showDrawer}/>
-            <Drawer
-                placement={placement}
-                closable={false}
-                onClose={onClose}
-                visible={state}
-                width={246}
-                >
-                {/*조건문 사용해서 user 경우 해당 프로필 보여주기*/}
-                <DrawerProfileNotUser />
-                {/*<DrawerProfile />*/}
-                <LinkSection>
-                    <LinkTitle>따미마을</LinkTitle>
-                    <LinkToSection>
-                        <LinkToText>
-                            <Link to='/workplace/my'>내 작업실</Link>
-                        </LinkToText>
-                        <LinkToMargintop />
-                        <LinkToText>
-                            <Link to="/like">좋아요한 작품</Link>
-                        </LinkToText>
-                    </LinkToSection>
-                    <LinktoTitleMargin />
-                    <LinkTitle>따미샵</LinkTitle>
-                    <LinkToSection>
-                        <LinkToText>
-                            <Link to="/purchase">판구매 조회</Link>
-                        </LinkToText>
-                        <LinkToMargintop />
-                        <LinkToText>
-                            <Link to="/subscribe">찜한 목록</Link>
-                        </LinkToText>
-                    </LinkToSection>
-                    <LinktoTitleMargin />
-                    <LinkTitle>대외활동</LinkTitle>
-                    <LinkToSection>
-                        <LinkToText>
-                            관심있는 활동
-                        </LinkToText>
-                    </LinkToSection>
-                    <Link to='/setting'><LinkTitle>설정</LinkTitle></Link>
-                </LinkSection>
-            </Drawer>
-            </Space>
-            <Title>
-                <Link to="/">
-                    <h1>DDAMI</h1>
-                </Link>
-            </Title>
-            <SearchBar>
-                <Link to="/search"><ImgSearch src={searchIcon} alt="검색"></ImgSearch></Link>
-            </SearchBar>
-            <Alarm>
-                <Badge count={5}>
-                    <Link to="/"><ImgAlarm src={alarmIcon} alt="알림"></ImgAlarm></Link>
-                </Badge>
-            </Alarm>
+      <>
+          { headerState && (
+            <Header >
+                <Space>
+                    <ImgMenu src={menu} alt="메뉴바" onClick={showDrawer}/>
+                    <Drawer
+                      placement={placement}
+                      closable={false}
+                      onClose={onClose}
+                      visible={state}
+                      width={246}
+                    >
+                        {/*조건문 사용해서 user 경우 해당 프로필 보여주기*/}
+                        <DrawerProfileNotUser />
+                        {/*<DrawerProfile />*/}
+                        <LinkSection>
+                            <LinkTitle>따미마을</LinkTitle>
+                            <LinkToSection>
+                                <LinkToText>
+                                    <Link to='/workplace/my'>내 작업실</Link>
+                                </LinkToText>
+                                <LinkToMargintop />
+                                <LinkToText>
+                                    <Link to="/like">좋아요한 작품</Link>
+                                </LinkToText>
+                            </LinkToSection>
+                            <LinktoTitleMargin />
+                            <LinkTitle>따미샵</LinkTitle>
+                            <LinkToSection>
+                                <LinkToText>
+                                    <Link to="/purchase">판구매 조회</Link>
+                                </LinkToText>
+                                <LinkToMargintop />
+                                <LinkToText>
+                                    <Link to="/subscribe">찜한 목록</Link>
+                                </LinkToText>
+                            </LinkToSection>
+                            <LinktoTitleMargin />
+                            <LinkTitle>대외활동</LinkTitle>
+                            <LinkToSection>
+                                <LinkToText>
+                                    관심있는 활동
+                                </LinkToText>
+                            </LinkToSection>
+                            <Link to='/setting'><LinkTitle>설정</LinkTitle></Link>
+                        </LinkSection>
+                    </Drawer>
+                </Space>
+                <Title>
+                    <Link to="/">
+                        <h1>DDAMI</h1>
+                    </Link>
+                </Title>
+                <SearchBar>
+                    <Link to="/search"><ImgSearch src={searchIcon} alt="검색"></ImgSearch></Link>
+                </SearchBar>
+                <Alarm>
+                    <Badge count={5}>
+                        <Link to="/"><ImgAlarm src={alarmIcon} alt="알림"></ImgAlarm></Link>
+                    </Badge>
+                </Alarm>
 
-        </Header>
+            </Header>
+          )}
+          </>
     );
 };
 
