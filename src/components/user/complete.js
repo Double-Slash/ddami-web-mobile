@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import MembershipComplete from "../components/user/MembershipComplete";
+import MembershipComplete from "./MembershipComplete";
 
 function Complete() {
     return(

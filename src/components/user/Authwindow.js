@@ -3,7 +3,7 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Provider, useDispatch} from "react-redux";
-import Complete from '../pages/complete';
+import Complete from './complete';
 
 function Window() {
     const [show, setShow] = useState(false);

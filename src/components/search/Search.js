@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import SearchHistory from "./SearchHistory";
 import SearchResults from "./SearchResults";
 import searchIcon from '../../static/icons/btn-search-enter.svg'
+import logo from '../../static/icons/img-profile1-small.png'
 import {useSelector, useDispatch} from 'react-redux';
-import {getSearchAuthor, getSearchWork, setFooterInvisible, setFooterVisible, setSearchWord} from "../../store/actions";
+import {getSearchAuthor, getSearchWork, setFooterVisible, setSearchWord} from "../../store/actions";
 
 export const SearchNav = styled.nav`
   z-index: 100;
@@ -16,7 +17,8 @@ export const SearchNav = styled.nav`
   background-color: white;
   & > a {
     text-decoration: none;
-    font-size: 30px;
+    color: #232323;
+    font-size: 22px;
     margin: auto;
     text-align: center;
     width: 70px;
@@ -26,6 +28,9 @@ export const SearchNav = styled.nav`
     background-color: white;
     width: calc(100vw - 70px);
     margin: auto;
+    font-size: 20px;
+    letter-spacing: -0.8px;
+    font-weight: 600;
   }
 `
 
@@ -38,7 +43,7 @@ const SearchNavbar = () => {
   return (
     <SearchNav>
       <Link to='/'>X</Link>
-      <div className="nav-logo">따미 로고</div>
+      <div className="nav-logo">DDAMI</div>
     </SearchNav>
   )
 }

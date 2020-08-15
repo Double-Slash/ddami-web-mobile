@@ -35,13 +35,14 @@ const Title = styled.p`
 
 const Artist = styled.p`
   display: inline-block;
-  width: 70px;
+  width: 100px;
   font-size: 15px;
   height: 21px;
-  & > div {
+  & > img {
     box-shadow: 0px 3px 15px #F0F0F0;
     width: 21px;
     border-radius: 100%;
+    margin-right: 5px;
   }
 `
 
@@ -63,13 +64,13 @@ const ViewAndLike = styled.p`
 
 const TitleBottom = styled.div`
   display: flex;
-  padding-left: 20px;
+  padding-left: 13px;
 `
 
 export default () => {
   const { piece } = useSelector((store) => {return store.work.work })
   const { title, author, views, likeCount, hasField } = piece
-  const { userId } = author
+  const { userId, imageUrl } = author
   // author image ?
   return (
     <TitleSection>
@@ -83,7 +84,7 @@ export default () => {
       }, '')}</Field>
       <Title>{title}</Title>
       <TitleBottom>
-        <Artist><img/>{userId}</Artist>
+        <Artist><img src={imageUrl}/>{userId}</Artist>
         <ViewAndLike>
           <img src={viewIcon}/>{views}
           <img src={likeIcon}/>{likeCount}
