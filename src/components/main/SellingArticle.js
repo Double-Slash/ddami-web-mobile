@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
+import EyeIcon from "../../static/icons/img-eye-small.svg"
+import HeartIcon from "../../static/icons/img-like-small.svg";
 
 const ImgBox = styled.div`
   width: 144px;
@@ -44,18 +46,39 @@ const Price = styled.p`
   margin: 5px 0;
 `;
 
-function SellingArticle() {
+const InfoWrapper = styled.div`
+width: 78px;
+height: 10px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+color: #B1B1B1;
+font-size: 10px;
+`;
+
+const Number = styled.p`
+color: #B1B1B1;
+font-size: 10px;
+`;
+
+function SellingArticle({_id, likeCount, locationName, title, price, views, fileUrl}) {
+    const detailUrl = "/detail/" + _id
     return (
         <Wrapper>
-            <Link to="/detail/1">
+            <Link to={detailUrl}>
                 <ImgBox>
-                    <img src={process.env.PUBLIC_URL + "/dummy/22.png"} alt="dummy"/>
+                    <img src={fileUrl} alt="piece" width="100%" height="100%"/>
                 </ImgBox>
             </Link>
-            <ProductName>작품 이름 (한 줄 이상은 말을 줄입니다)</ProductName>
-            <UniversityName>대학교 이름</UniversityName>
-            <Price>15,000원</Price>
-            {/*TODO : 조회수, 좋아요*/}
+            <ProductName>{title}</ProductName>
+            <UniversityName>{locationName}</UniversityName>
+            <Price>{price}원</Price>
+            <InfoWrapper>
+                <img src={EyeIcon} alt="eye"/>
+                <Number>{views}</Number>
+                <img src={HeartIcon} alt="like"/>
+                <Number>{likeCount}</Number>
+            </InfoWrapper>
         </Wrapper>
     );
 }
