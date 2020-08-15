@@ -3,12 +3,12 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Provider, useDispatch} from "react-redux";
-import Complete from './Complete';
+import Complete from './complete';
 import Modal from 'antd/lib/modal/Modal';
 
 
 const ModalWarapper = `
-  display: none; 
+  display: none;
   align:center;
   left: 0;
   top: 0;
