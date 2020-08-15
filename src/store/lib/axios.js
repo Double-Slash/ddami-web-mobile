@@ -5,7 +5,7 @@ export const requestHandler = async (params) => {
     const { path, ...args } = params
     const config = {
       ...args,
-      url: 'http://222.251.129.150/api' + path,
+      url: 'http://222.251.129.150' + path,
       timeout: 5000,
       headers: params.headers ? params.headers : {}
     }

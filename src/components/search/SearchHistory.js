@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 
 const SearchHistory = styled.section`
+  margin-top: 60px;
   background-color: #F0F0F6;
   height: calc(100vh - 120px);
   padding: 15px 0px;

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import likeIcon from '../../static/icons/like.svg';
 import viewIcon from '../../static/icons/view.svg';
+import {useSelector} from "react-redux";
 
 export const RowBody = styled.div`
   height: 140px;
@@ -23,6 +24,7 @@ export const RowImage = styled.div`
 `
 
 export const RowText = styled.div`
+  width: 100%;
   padding: 20px 2px;
 `
 
@@ -38,6 +40,7 @@ export const RowContents = styled.div`
   color: #707070;
   font-size: 13px;
   line-height: 23px;
+  position: absolute;
 `
 
 const RowBottom = styled.div`
@@ -45,9 +48,12 @@ const RowBottom = styled.div`
   font-size: 10px;
   color: #808080;
   margin-top: 5px;
+  position: relative;
+  top: 50px;
 `
 
 const RowWriter = styled.div`
+  bottom: -23px;
   font-size: 12px;
   color: #4D4D4D;
   width: calc(90% - 80px);
@@ -67,24 +73,27 @@ const RowView = styled.div`
 `
 
 const RowLike = styled.div`
+  margin-top: 5px;
   width: 40px;
 `
 
 export default (props) => {
-  const {id, img, title, contents, writer, view, like, writerImage} = props
-  const onClickRow = () => {
-
+  const { tab } = useSelector((store) => { return store.search })
+  const { _id, fileUrl, title, description, author: {userId, imageUrl}, views, likeCount, writerImage } = props
+  const routeWork = () => {
+    if (tab === 0) props.history.push(`/workplace/work/${_id}`)
+    else if (tab === 1) props.history.push(`/workplace/material/${_id}`)
   }
   return(
-    <RowBody onClick={onClickRow}>
-      <RowImage><img/></RowImage>
+    <RowBody onClick={routeWork}>
+      <RowImage><img src={fileUrl[0]}/></RowImage>
       <RowText>
         <RowTitle>{title}</RowTitle>
-        <RowContents>{contents}</RowContents>
+        <RowContents>{description}</RowContents>
         <RowBottom>
-          <RowWriter><WriteImage src={writerImage}/>&nbsp;{writer}</RowWriter>
-          <RowView><img src={viewIcon}/>&nbsp;{view}</RowView>
-          <RowLike><img src={likeIcon}/>&nbsp;{like}</RowLike>
+          <RowWriter><WriteImage src={imageUrl}/>&nbsp;&nbsp;{userId}</RowWriter>
+          <RowView><img src={viewIcon}/>&nbsp;{views}</RowView>
+          <RowLike><img src={likeIcon}/>&nbsp;{likeCount}</RowLike>
         </RowBottom>
       </RowText>
     </RowBody>

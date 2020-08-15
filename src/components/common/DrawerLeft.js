@@ -1,9 +1,8 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
-import {  Link, Switch, Redirect } from "react-router-dom";
+import {Link} from "react-router-dom";
 import 'antd/dist/antd.css';
-import { Drawer, Button, Radio, Space, Tooltip, Badge } from 'antd';
-import { ClockCircleOutlined } from '@ant-design/icons';
+import {Badge, Drawer, Space} from 'antd';
 import menu from '../../static/icons/menu.svg';
 import searchIcon from '../../static/icons/btn-search-enter.svg'
 import alarmIcon from '../../static/icons/btn-alarm.svg'
@@ -17,7 +16,7 @@ import DrawerProfileNotUser from "./DrawerProfileNotUser";
 const Header = styled.header`
     display: flex;
     //justify-content:space-between;
-    background: #00b4d8;
+    background: #FFFFFF;
     width: 100%;
     height: 60px;
 `;
@@ -118,7 +117,6 @@ const DrawerLeft = () => {
     const onClose = () => setState(false);
 
     return (
-        <>
         <Header >
             <Space>
             <ImgMenu src={menu} alt="메뉴바" onClick={showDrawer}/>
@@ -136,7 +134,7 @@ const DrawerLeft = () => {
                     <LinkTitle>따미마을</LinkTitle>
                     <LinkToSection>
                         <LinkToText>
-                            내 작업실
+                            <Link to='/workplace/my'>내 작업실</Link>
                         </LinkToText>
                         <LinkToMargintop />
                         <LinkToText>
@@ -166,7 +164,9 @@ const DrawerLeft = () => {
             </Drawer>
             </Space>
             <Title>
-                <h1>DDAMI</h1>
+                <Link to="/">
+                    <h1>DDAMI</h1>
+                </Link>
             </Title>
             <SearchBar>
                 <Link to="/search"><ImgSearch src={searchIcon} alt="검색"></ImgSearch></Link>
@@ -177,10 +177,7 @@ const DrawerLeft = () => {
                 </Badge>
             </Alarm>
 
-        </Header>   
-
-
-        </>
+        </Header>
     );
 };
 

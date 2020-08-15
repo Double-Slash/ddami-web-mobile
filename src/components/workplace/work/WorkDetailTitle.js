@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import toggleLike from '../../static/icons/toggle-like.svg';
-import viewIcon from '../../static/icons/view.svg';
-import likeIcon from '../../static/icons/like.svg';
+import etcBtn from '../../../static/icons/btn-etc.svg';
+import toggleLike from '../../../static/icons/toggle-like.svg';
+import viewIcon from '../../../static/icons/view.svg';
+import likeIcon from '../../../static/icons/like.svg';
+import {useSelector} from "react-redux";
 
 const TitleSection = styled.section`
   padding: 20px;
@@ -19,7 +21,7 @@ const IconDiv = styled.div`
 const Field = styled.div`
   font-size: 14px;
   color: #3C3C3C;
-  padding: 0px 20px;
+  padding: 0px 13px;
   margin-bottom: 13px;
 `
 
@@ -33,13 +35,14 @@ const Title = styled.p`
 
 const Artist = styled.p`
   display: inline-block;
-  width: 70px;
+  width: 100px;
   font-size: 15px;
   height: 21px;
-  & > div {
+  & > img {
     box-shadow: 0px 3px 15px #F0F0F0;
     width: 21px;
     border-radius: 100%;
+    margin-right: 5px;
   }
 `
 
@@ -61,27 +64,30 @@ const ViewAndLike = styled.p`
 
 const TitleBottom = styled.div`
   display: flex;
-  padding-left: 20px;
+  padding-left: 13px;
 `
 
-export default (props) => {
-  const { field1, field2, title, artist, view, like } = props
+export default () => {
+  const { piece } = useSelector((store) => {return store.work.work })
+  const { title, author, views, likeCount, hasField } = piece
+  const { userId, imageUrl } = author
+  // author image ?
   return (
     <TitleSection>
       <IconDiv>
         <img src={toggleLike} alt='즐겨찾기'/>
-        <img src={toggleLike} alt='더보기'/>
+        <img src={etcBtn} alt='더보기'/>
       </IconDiv>
-      <Field>그래픽 디자인 ・ 편집디자인</Field>
-      <Title>작가가 지정한 제목 최대폭 지정으로 여러줄 표기</Title>
+      <Field>{hasField.reduce((prev, field, idx) => {
+        if (idx === hasField.length-1) return prev + field
+        return prev + `${field} ・`
+      }, '')}</Field>
+      <Title>{title}</Title>
       <TitleBottom>
-        <Artist>
-          <img/>
-          김따미
-        </Artist>
+        <Artist><img src={imageUrl}/>{userId}</Artist>
         <ViewAndLike>
-          <img src={viewIcon}/>900
-          <img src={likeIcon}/>560
+          <img src={viewIcon}/>{views}
+          <img src={likeIcon}/>{likeCount}
         </ViewAndLike>
       </TitleBottom>
     </TitleSection>

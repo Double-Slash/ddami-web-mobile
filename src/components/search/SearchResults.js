@@ -3,9 +3,15 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import ResultRowWM from "./ResultRowWM";
 import ResultArtist from "./ResultArtist";
+import {useDispatch, useSelector} from "react-redux";
+import {changeSearchTab, setSearchSort} from "../../store/actions";
+
+const Background = styled.div`
+  margin-top: 60px;
+  padding-top: 8px;
+`
 
 const SearchBody = styled.div`
-  margin-top: 8px;
   border-top-left-radius: 16px;
 `
 
@@ -41,52 +47,37 @@ const SearchSort = styled.div`
 `
 
 const SearchCategory = (props) => {
-  const {selectTab, setSelectTab} = props
-  const selectWork = () => {
-    setSelectTab(0);
-  }
-  const selectMaterial = () => {
-    setSelectTab(1);
-  }
-  const selectArtist = () => {
-    setSelectTab(2);
-  }
+  const { tab } = useSelector((store) => { return store.search })
+  const dispatch = useDispatch()
+  const selectWork = () => dispatch(changeSearchTab(0))
+  const selectMaterial = () => dispatch(changeSearchTab(1))
+  const selectArtist = () => dispatch(changeSearchTab(2))
+  const changeSortLike = () => dispatch(setSearchSort('L'))
+  const changeSortLatest = () => dispatch(setSearchSort('D'))
   return (
     <SearchTab>
       <CategoryTab>
-        <Category className={selectTab === 0 && 'selected'} onClick={selectWork}>작품</Category>
-        <Category className={selectTab === 1 && 'selected'} onClick={selectMaterial}>재료</Category>
-        <Category className={selectTab === 2 && 'selected'} onClick={selectArtist}>작가</Category>
+        <Category className={tab === 0 && 'selected'} onClick={selectWork}>작품</Category>
+        <Category className={tab === 1 && 'selected'} onClick={selectMaterial}>재료</Category>
+        <Category className={tab === 2 && 'selected'} onClick={selectArtist}>작가</Category>
       </CategoryTab>
       <SearchSort>
-        <div>인기순</div>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <div>최신순</div>
+        <div onClick={changeSortLike}>인기순</div>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <div onClick={changeSortLatest}>최신순</div>
       </SearchSort>
     </SearchTab>
   )
 }
 
-export default () => {
-  const [selectTab, setSelectTab] = useState(0);
-  useEffect(()=>{
-  }, [selectTab])
+export default (props) => {
+  const { state, authorData, pieceData, tab } = useSelector((store) => { return store.search })
   return (
-    <div style={{backgroundColor: '#F0F0F6', opacity: 1}}>
+    <Background>
       <SearchBody>
-        <SearchCategory selectTab={selectTab} setSelectTab={setSelectTab}/>
-        {selectTab !== 2 && <ResultRowWM title='name' contents='작품 글에도 야가 들어가지롱 작품 글에도 야가 들어가지롱 작품 글에도 야가... 들어가지롱 작 ...품 글에도 야가 들어가지롱 작품 글에도'
-                                         view={900} like={561} writer='김따미'/>}
-        {selectTab !== 2 && <ResultRowWM title='name' contents='작품 글에도 야가 들어가지롱 작품 글에도 야가 들어가지롱 작품 글에도 야가... 들어가지롱 작 ...품 글에도 야가 들어가지롱 작품 글에도'
-                                         view={900} like={561} writer='김따미'/>}
-        {selectTab === 2 && <ResultArtist name='김따미' field1='산업 디자인' field2='공간 디자인'
-                                          isFollowing={false}
-                                          introduction='작품 글에도 야가 들어가지롱 작품 글에도 야가 들어가지롱 작품 글에도 야가... 들어가지롱 작 ...품 글에도 야가 들어가지롱 작품 글에도'
-          />}
-        {selectTab === 2 && <ResultArtist name='김따미' field1='산업 디자인' field2='공간 디자인'
-                                          isFollowing={false}
-                                          introduction='작품 글에도 야가 들어가지롱 작품 글에도 야가 들어가지롱 작품 글에도 야가... 들어가지롱 작 ...품 글에도 야가 들어가지롱 작품 글에도'
-        />}
+        <SearchCategory/>
+        {tab === 0 && pieceData.map((data)=> {return <ResultRowWM key={props._id} {...props} {...data} /> }) }
+        {tab === 2 && authorData.map((data)=> {return <ResultArtist key={props._id} {...props} {...data} /> }) }
       </SearchBody>
-    </div>
+    </Background>
   )
 }

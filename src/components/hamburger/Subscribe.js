@@ -1,5 +1,4 @@
 import React from 'react';
-import DrawerLeft from "../common/DrawerLeft";
 import styled from "styled-components";
 import 'antd/dist/antd.css';
 import DotIcon from '../../static/icons/dot_menu.svg'
@@ -140,7 +139,6 @@ const TradingStop = styled.div`
 const Subscribe = () => {
     return (
         <>
-            <DrawerLeft />
             <Body>
                 <LikeTitle>찜한 목록</LikeTitle>
                 <LikeSection>

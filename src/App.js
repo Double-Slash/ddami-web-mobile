@@ -1,10 +1,8 @@
-import React from 'react';
-import './App.css';
-import {Provider} from "react-redux";
-import {createGlobalStyle} from 'styled-components';
-import Page from './pages';
+import React from "react";
+import "./App.css";
+import {createGlobalStyle} from "styled-components";
+import Page from "./pages";
 import {BrowserRouter} from "react-router-dom";
-
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -13,11 +11,13 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     box-sizing: border-box;
     margin: 0;
+    overflow-x: hidden;
     #root, .App{
       height: 100%;
       width: 100%;
     }
    }
+  *:focus { outline:none; }
 `;
 
 function App() {
@@ -25,8 +25,6 @@ function App() {
     <BrowserRouter>
       <GlobalStyle/>
       <Page/>
-      {/*<Route exact path="/" component={Main} />*/}
-      {/*<ImageGrid/>*/}
     </BrowserRouter>
   );
 }

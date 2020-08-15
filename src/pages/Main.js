@@ -1,13 +1,15 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import NavbarTemp from "../components/Navbar-temp";
-import Navbar from "../components/common/DrawerLeft";
+import Promotion from "../components/main/Promotion";
+import MainDdamiShop from "../components/main/MainDdamiShop";
+import MainDdamiMaeul from "../components/main/MainDdamiMaeul";
 
 function Main() {
-    return(
-      <>
-        <Route exact path='/' component={Navbar}/>
-      </>
+    return (
+        <>
+            <Promotion/>
+            <MainDdamiShop/>
+            <MainDdamiMaeul/>
+        </>
     );
 }
 

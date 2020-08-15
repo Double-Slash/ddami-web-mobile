@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import SearchHistory from "./SearchHistory";
 import SearchResults from "./SearchResults";
 import searchIcon from '../../static/icons/btn-search-enter.svg'
-import {connect, useSelector, useDispatch} from 'react-redux';
-import {GET_SEARCH_AUTHOR} from "../../store/types";
-import axios from 'axios';
+import logo from '../../static/icons/img-profile1-small.png'
+import {useSelector, useDispatch} from 'react-redux';
+import {getSearchAuthor, getSearchWork, setFooterVisible, setSearchWord} from "../../store/actions";
 
 export const SearchNav = styled.nav`
+  z-index: 100;
   position: fixed;
   top: 0;
   display: flex;
@@ -16,29 +17,42 @@ export const SearchNav = styled.nav`
   background-color: white;
   & > a {
     text-decoration: none;
-    font-size: 30px;
+    color: #232323;
+    font-size: 22px;
     margin: auto;
     text-align: center;
     width: 70px;
   }
   
   & > .nav-logo {
+    background-color: white;
     width: calc(100vw - 70px);
     margin: auto;
+    font-size: 20px;
+    letter-spacing: -0.8px;
+    font-weight: 600;
   }
+`
+
+const SearchDiv = styled.div`
+  background-color: #F0F0F6;
+  padding-bottom: 42px;
 `
 
 const SearchNavbar = () => {
   return (
     <SearchNav>
       <Link to='/'>X</Link>
-      <div className="nav-logo">따미 로고</div>
+      <div className="nav-logo">DDAMI</div>
     </SearchNav>
   )
 }
 
 const SearchSection = styled.section`
-  margin-top: 60px;
+  z-index: 100;
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 60px;
   display: flex;
   height: 62px;
 `
@@ -51,7 +65,6 @@ const SearchInput = styled.input`
   outline: none;
   &::placeholder {
     color: #AAAAAA;
-    opacity: 1;
   }
 `
 
@@ -61,28 +74,25 @@ const SearchButton = styled.div`
   margin: auto;
 `
 
-const Search = () => {
-  const [searchState, setSearchState] = useState(0)
-  const [searchWord, setSearchWord] = useState(null)
+const Search = (props) => {
   const searchInput = useRef()
-  const searchStore = useSelector((store) => { return store.search })
+  const { state, tab, word, sortingBy } = useSelector((store) => { return store.search })
   const dispatch = useDispatch()
 
   const handleSearch = async () => {
     const tempWord = searchInput.current.value
-    setSearchWord(tempWord)
-    // const a = await axios.get('https://222.251.129.150/api/author/search')
-    // console.log(a);
-    dispatch({type: GET_SEARCH_AUTHOR, payload: {searchingBy: tempWord}})
+    await dispatch(setSearchWord(tempWord))
+    dispatch(getSearchWork({sortingBy}))
+    dispatch(getSearchAuthor({sortingBy}))
   }
-  useEffect(()=> {
-    if (searchWord) {
-      setSearchState(1);
-    }
-  }, [searchWord])
+
+  useEffect(()=>{
+    dispatch(setFooterVisible(false))
+    return () => dispatch(setFooterVisible(true))
+  },[])
 
   return(
-    <div>
+    <SearchDiv>
       <SearchNavbar/>
       <SearchSection>
         <SearchInput ref={searchInput} placeholder='검색어를 입력해주세요'/>
@@ -90,9 +100,8 @@ const Search = () => {
           <img src={searchIcon}/>
         </SearchButton>
       </SearchSection>
-      {searchState === 0 && <SearchHistory/>}
-      {searchState === 1 && <SearchResults/>}
-    </div>
+      {state === 'pending' && word === null ? <SearchHistory {...props}/> : <SearchResults {...props}/>}
+    </SearchDiv>
   )
 }
 
