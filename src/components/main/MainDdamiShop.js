@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import SellingArticle from "./SellingArticle";
 import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {postAllPiece} from "../../store/actions";
 
 const DdamiShop = styled.div`
   margin-left: 18px;
@@ -72,6 +74,12 @@ const ArticleWrapper = styled.div`
 `;
 
 function MainDdamiShop() {
+    const {products} = useSelector(store => store.shop)
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(postAllPiece())
+    }, [])
     return (
         <DdamiShop>
             <Header>
@@ -84,10 +92,15 @@ function MainDdamiShop() {
                 <UnderLine/>
             </UnderLineWrapper>
             <ArticleWrapper>
-                <SellingArticle/>
-                <SellingArticle/>
-                <SellingArticle/>
-                <SellingArticle/>
+                {products.slice(0, 4).map((item) => {
+                    console.log(products)
+                    const {_id, likeCount, locationName, title, price, views, pieces} = item
+                    const {fileUrl} = pieces[0]
+                    return (
+                        <SellingArticle _id={_id} likeCount={likeCount} locationName={locationName} title={title}
+                                        price={price} views={views} fileUrl={fileUrl}/>
+                    )
+                })}
             </ArticleWrapper>
         </DdamiShop>
     );
