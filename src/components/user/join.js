@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Provider, useDispatch } from "react-redux";
-import Complete from "./complete";
+import Complete from "./Complete";
 import WindowShow from "./Authwindow";
 
 const EmailInput = styled.input`
