@@ -20,7 +20,11 @@ const LikeTitle = styled.div`
 `;
 
 const LikeSection = styled.div`
-  background: coral;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 14px;
+  background: #ffffff;
   width: 100%;
   height: 100%;
   border-top-left-radius: 20px;
@@ -31,7 +35,7 @@ const LikeSection = styled.div`
 const WorkSection = styled.div`
   width: 157px;
   height: 178px;
-  background: cadetblue;
+  //background: cadetblue;
   border-radius: 6px;
   border: 0.5px solid #DBDBDB;
 `;
@@ -48,7 +52,7 @@ const WorkTitleSection = styled.div`
   padding-left: 9px;
   padding-top: 8px;
   width: 100%;
-  background: yellow;
+  //background: yellow;
 `;
 
 const WorkTitle = styled.div`
@@ -64,7 +68,7 @@ const WorkLikeSection = styled.div`
   width: 100%;
   margin-top: 4px;
   padding-left: 9px;
-  background: dodgerblue;
+  //background: dodgerblue;
 `;
 
 const ProfileImg = styled.img`
@@ -83,7 +87,7 @@ const Heart = styled.img`
   margin-left: 70.23px;
   width: 18px;
   height: 16.15px;
-  background: darkblue;
+  //background: darkblue;
 `;
 
 const Like = () => {
@@ -98,12 +102,80 @@ const Like = () => {
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
                         <WorkLikeSection>
-                            <ProfileImg/>
+                            <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                        alt="user-name"/>
                             <Nickname>닉네임</Nickname>
                             <Heart  src={heartIcon} alt="좋아요 아이콘"/>
                         </WorkLikeSection>
                     </WorkSection>
+
+                    <WorkSection>
+                        <WorkImg/>
+                        <WorkTitleSection>
+                            <WorkTitle>작품 이름</WorkTitle>
+                        </WorkTitleSection>
+                        <WorkLikeSection>
+                            <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                        alt="user-name"/>
+                            <Nickname>닉네임</Nickname>
+                            <Heart  src={heartIcon} alt="좋아요 아이콘"/>
+                        </WorkLikeSection>
+                    </WorkSection>
+
+                    <WorkSection>
+                        <WorkImg/>
+                        <WorkTitleSection>
+                            <WorkTitle>작품 이름</WorkTitle>
+                        </WorkTitleSection>
+                        <WorkLikeSection>
+                            <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                        alt="user-name"/>
+                            <Nickname>닉네임</Nickname>
+                            <Heart  src={heartIcon} alt="좋아요 아이콘"/>
+                        </WorkLikeSection>
+                    </WorkSection>
+
+                    <WorkSection>
+                        <WorkImg/>
+                        <WorkTitleSection>
+                            <WorkTitle>작품 이름</WorkTitle>
+                        </WorkTitleSection>
+                        <WorkLikeSection>
+                        <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                alt="user-name"/>
+                            <Nickname>닉네임</Nickname>
+                            <Heart  src={heartIcon} alt="좋아요 아이콘"/>
+                        </WorkLikeSection>
+                    </WorkSection>
+
+                    <WorkSection>
+                        <WorkImg/>
+                        <WorkTitleSection>
+                            <WorkTitle>작품 이름</WorkTitle>
+                        </WorkTitleSection>
+                        <WorkLikeSection>
+                            <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                        alt="user-name"/>
+                            <Nickname>닉네임</Nickname>
+                            <Heart  src={heartIcon} alt="좋아요 아이콘"/>
+                        </WorkLikeSection>
+                    </WorkSection>
+
+                    <WorkSection>
+                        <WorkImg/>
+                        <WorkTitleSection>
+                            <WorkTitle>작품 이름</WorkTitle>
+                        </WorkTitleSection>
+                        <WorkLikeSection>
+                            <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                        alt="user-name"/>
+                            <Nickname>닉네임</Nickname>
+                            <Heart  src={heartIcon} alt="좋아요 아이콘"/>
+                        </WorkLikeSection>
+                    </WorkSection>
+
                 </LikeSection>
+
             </Body>
 
         </>

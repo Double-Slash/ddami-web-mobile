@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Join from './Join';
 
-
 const Complete = styled.div`
     text-align: center;
     font-color:#848484;
