@@ -1,8 +1,7 @@
 //회원가입이 완료메세지
 import React from 'react';
 import styled from 'styled-components';
-import Membership from './Join';
-
+import Join from './Join';
 
 const Complete = styled.div`
     text-align: center;

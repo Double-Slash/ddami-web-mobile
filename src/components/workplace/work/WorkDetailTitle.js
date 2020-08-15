@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import etcBtn from '../../../static/icons/btn-etc.svg';
 import toggleLike from '../../../static/icons/toggle-like.svg';
 import viewIcon from '../../../static/icons/view.svg';
 import likeIcon from '../../../static/icons/like.svg';
+import likeFilledIcon from '../../../static/icons/like-filled.svg';
 import {useSelector} from "react-redux";
 
 const TitleSection = styled.section`
@@ -35,13 +36,14 @@ const Title = styled.p`
 
 const Artist = styled.p`
   display: inline-block;
-  width: 70px;
+  width: 100px;
   font-size: 15px;
   height: 21px;
-  & > div {
+  & > img {
     box-shadow: 0px 3px 15px #F0F0F0;
     width: 21px;
     border-radius: 100%;
+    margin-right: 5px;
   }
 `
 
@@ -52,6 +54,7 @@ const ViewAndLike = styled.p`
   width: 120px;
   display: inline-block;
   margin-left: auto;
+  text-align: right;
   & > * {
     margin: 0px 3px;
   }
@@ -63,18 +66,23 @@ const ViewAndLike = styled.p`
 
 const TitleBottom = styled.div`
   display: flex;
-  padding-left: 20px;
+  padding-left: 13px;
 `
 
 export default () => {
+  const [ likeByUser , setLikeByUser ] = useState(false)
   const { piece } = useSelector((store) => {return store.work.work })
   const { title, author, views, likeCount, hasField } = piece
-  const { userId } = author
-  // author image ?
+  const { userId, imageUrl } = author
+
+  const clickLikeToggle = () => {
+    setLikeByUser(!likeByUser)
+  }
+
   return (
     <TitleSection>
       <IconDiv>
-        <img src={toggleLike} alt='즐겨찾기'/>
+        <img onClick={clickLikeToggle} src={likeByUser ? likeFilledIcon : toggleLike} alt='즐겨찾기'/>
         <img src={etcBtn} alt='더보기'/>
       </IconDiv>
       <Field>{hasField.reduce((prev, field, idx) => {
@@ -83,7 +91,7 @@ export default () => {
       }, '')}</Field>
       <Title>{title}</Title>
       <TitleBottom>
-        <Artist><img/>{userId}</Artist>
+        <Artist><img src={imageUrl}/>{userId}</Artist>
         <ViewAndLike>
           <img src={viewIcon}/>{views}
           <img src={likeIcon}/>{likeCount}

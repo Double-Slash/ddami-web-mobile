@@ -75,7 +75,7 @@ const Student = styled.div`
 
 `;
 
-const Files = styled.div`
+const Files = styled.input`
 top: 352px;
 left: 24px;
 width: 220px;
@@ -176,17 +176,17 @@ const Authbar = styled.div `
 function MembershipAuth(){
     return(
         <div name="MembershipAuth">
-        <AuthForm>
+            <AuthForm>
             학교<br/>
-            <School type = "text"/><br/>
+            <School type="text"/><br/>
             학과/학번<br/>
-            <Scholarship type = "text"/><SchoolNumber type = "text"/><br/>
+            <Scholarship type="text"/><SchoolNumber type="text"/><br/>
             <br/>인증파일 첨부<br/>
             <Student>
             ※ 학생증 사진이나 개인정보(주민등록번호 필수)가 포함된 학교 포털사이트 화면 사진을 첨부해주세요
             </Student>
             <br/>
-            <Files placeholder = "파일을 첨부하세요"/><Camera src={Cameras}/><Clip src = {Fileicon}/>
+             <Files type ="text"/><Camera src={Cameras}/><Clip src={Fileicon}/> 
             <br/>
             <Article>관심분야</Article>
             <br/>

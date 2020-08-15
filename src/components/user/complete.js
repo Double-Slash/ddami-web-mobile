@@ -1,11 +1,11 @@
-import React,{MembershipComplete} from "react";
+import React from "react";
 import { Route } from "react-router-dom";
-import MembershipComplete from "./JoinComplete";
+import MembershipComplete from "./MembershipComplete";
 
 function Complete() {
     return(
       <>
-        <Route exact path='./' component={MembershipComplete} />
+        <Route exact path='../components/MembershipComplete' component={MembershipComplete} />
       </>
     );
 }
