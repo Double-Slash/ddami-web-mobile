@@ -104,7 +104,8 @@ const Like = () => {
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
                         <WorkLikeSection>
-                            <ProfileImg/>
+                            <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                        alt="user-name"/>
                             <Nickname>닉네임</Nickname>
                             <Heart  src={heartIcon} alt="좋아요 아이콘"/>
                         </WorkLikeSection>
@@ -116,7 +117,8 @@ const Like = () => {
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
                         <WorkLikeSection>
-                            <ProfileImg/>
+                            <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                        alt="user-name"/>
                             <Nickname>닉네임</Nickname>
                             <Heart  src={heartIcon} alt="좋아요 아이콘"/>
                         </WorkLikeSection>
@@ -128,7 +130,8 @@ const Like = () => {
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
                         <WorkLikeSection>
-                            <ProfileImg/>
+                            <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                        alt="user-name"/>
                             <Nickname>닉네임</Nickname>
                             <Heart  src={heartIcon} alt="좋아요 아이콘"/>
                         </WorkLikeSection>
@@ -140,7 +143,8 @@ const Like = () => {
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
                         <WorkLikeSection>
-                            <ProfileImg/>
+                        <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                alt="user-name"/>
                             <Nickname>닉네임</Nickname>
                             <Heart  src={heartIcon} alt="좋아요 아이콘"/>
                         </WorkLikeSection>
@@ -152,7 +156,8 @@ const Like = () => {
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
                         <WorkLikeSection>
-                            <ProfileImg/>
+                            <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                        alt="user-name"/>
                             <Nickname>닉네임</Nickname>
                             <Heart  src={heartIcon} alt="좋아요 아이콘"/>
                         </WorkLikeSection>
@@ -164,7 +169,8 @@ const Like = () => {
                             <WorkTitle>작품 이름</WorkTitle>
                         </WorkTitleSection>
                         <WorkLikeSection>
-                            <ProfileImg/>
+                            <ProfileImg src={process.env.PUBLIC_URL + "/dummy/22.png"}
+                                        alt="user-name"/>
                             <Nickname>닉네임</Nickname>
                             <Heart  src={heartIcon} alt="좋아요 아이콘"/>
                         </WorkLikeSection>
