@@ -45,7 +45,6 @@ opacity: 1;
 function Login(){
     return(
         <div name="header">
-
           <LoginForm>
             아이디
             <IDInput type = "text" name = "id"/>
