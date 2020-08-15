@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import etcBtn from '../../../static/icons/btn-etc.svg';
 import toggleLike from '../../../static/icons/toggle-like.svg';
 import viewIcon from '../../../static/icons/view.svg';
 import likeIcon from '../../../static/icons/like.svg';
+import likeFilledIcon from '../../../static/icons/like-filled.svg';
 import {useSelector} from "react-redux";
 
 const TitleSection = styled.section`
@@ -53,6 +54,7 @@ const ViewAndLike = styled.p`
   width: 120px;
   display: inline-block;
   margin-left: auto;
+  text-align: right;
   & > * {
     margin: 0px 3px;
   }
@@ -68,14 +70,19 @@ const TitleBottom = styled.div`
 `
 
 export default () => {
+  const [ likeByUser , setLikeByUser ] = useState(false)
   const { piece } = useSelector((store) => {return store.work.work })
   const { title, author, views, likeCount, hasField } = piece
   const { userId, imageUrl } = author
-  // author image ?
+
+  const clickLikeToggle = () => {
+    setLikeByUser(!likeByUser)
+  }
+
   return (
     <TitleSection>
       <IconDiv>
-        <img src={toggleLike} alt='즐겨찾기'/>
+        <img onClick={clickLikeToggle} src={likeByUser ? likeFilledIcon : toggleLike} alt='즐겨찾기'/>
         <img src={etcBtn} alt='더보기'/>
       </IconDiv>
       <Field>{hasField.reduce((prev, field, idx) => {
