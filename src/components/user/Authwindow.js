@@ -3,7 +3,7 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Provider, useDispatch} from "react-redux";
-import Complete from '../pages/complete';
+import Complete from './Complete';
 import Modal from 'antd/lib/modal/Modal';
 
 
@@ -49,8 +49,6 @@ function Window() {
         </Button>
         </Modal>
         </React.Fragment>
-
-
         
         {/*<Modal show={show} onHide={handleClose} animation={false}>*/}
         {/*  <Modal.Header closeButton>*/}

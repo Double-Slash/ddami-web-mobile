@@ -1,7 +1,7 @@
 // 미대생 인증 
 import React from 'react';
 import styled from 'styled-components';
-import MAuth from './joinComplete';
+import MAuth from './JoinComplete';
 import {ReactCompoenent as Cameras} from '../static/icons/camera.svg';
 import {ReactCompoenent as Fileicon} from '../static/icons/file.svg';
 const AuthForm = styled.div`
