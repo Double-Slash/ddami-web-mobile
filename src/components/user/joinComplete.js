@@ -44,7 +44,7 @@ const AuthMide = styled.div`
     margin-top : 20px;
 `;
 
-function MembershipComplete(){
+function JoinComplete(){
     return(
         <div name="complete">
             <Complete>가입이 완료되었습니다!</Complete>
@@ -56,4 +56,4 @@ function MembershipComplete(){
         </div>
     );
 }
-export default MembershipComplete;
+export default JoinComplete;
