@@ -7,6 +7,7 @@ export function setSearchWord(word){
   }
 }
 
+
 export function setSearchSort(word){
   return {
     type: types.SET_SEARCH_SORT,
@@ -129,8 +130,75 @@ export function getWorkDetailSuccess(payload){
   }
 }
 
-export function getWorkDetailFail(){
+export function getWorkDetailFail() {
   return {
     type: types.GET_WORK_FAIL,
+  }
+}
+
+export function postAllPiece(payload) {
+  return {
+    type: types.POST_ALL_PIECE,
+    payload
+  }
+}
+
+export function postAllMaterial(payload) {
+  return {
+    type: types.POST_ALL_MATERIAL,
+    payload
+  }
+}
+
+export function postAllPieceSuccess(payload) {
+  return {
+    type: types.POST_ALL_PIECE_SUCCESS,
+    payload
+  }
+}
+
+export function postAllPieceFail(payload) {
+  return {
+    type: types.POST_ALL_PIECE_FAIL
+  }
+}
+
+export function postAllMaterialSuccess(payload) {
+  return {
+    type: types.POST_ALL_MATERIAL_SUCCESS,
+    payload
+  }
+}
+
+export function postAllMaterialFail(payload) {
+  return {
+    type: types.POST_ALL_MATERIAL_FAIL
+  }
+}
+
+export function getPieceDetail(payload) {
+  return {
+    type: types.GET_PIECE_DETAIL,
+    payload
+  }
+}
+
+export function getPieceDetailSuccess(payload) {
+  return {
+    type: types.GET_PIECE_DETAIL_SUCCESS,
+    payload
+  }
+}
+
+export function getPieceDetailFail() {
+  return {
+    type: types.GET_PIECE_DETAIL_FAIL
+  }
+}
+
+export function getMaterialDetail(payload) {
+  return {
+    type: types.GET_MATERIAL_DETAIL,
+    payload
   }
 }
