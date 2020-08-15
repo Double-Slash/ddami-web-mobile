@@ -4,8 +4,9 @@ import {Link} from "react-router-dom";
 import 'antd/dist/antd.css';
 import {Badge, Drawer, Space} from 'antd';
 import menu from '../../static/icons/menu.svg';
-import searchIcon from '../../static/icons/btn-search-enter.svg'
-import alarmIcon from '../../static/icons/btn-alarm.svg'
+import searchIcon from '../../static/icons/btn-search-enter.svg';
+import alarmIcon from '../../static/icons/btn-alarm.svg';
+import './antdStyle.css';
 
 import DrawerProfile from './DrawerProfile';
 import DrawerProfileNotUser from "./DrawerProfileNotUser";
@@ -100,6 +101,9 @@ const LinkToMargintop = styled.div`
 const LinkToText = styled.div`
   font-size: 15px;
   color:#232323;
+    & > a {
+      text-decoration: none;
+    }
 `;
 
 const LinktoTitleMargin = styled.div`

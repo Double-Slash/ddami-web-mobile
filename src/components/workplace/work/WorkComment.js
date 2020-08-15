@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import MyComment from "./MyComment";
+import {useSelector} from "react-redux";
 
 const Comment = styled.div`
   padding: 0 0 0 21px;
@@ -66,6 +67,8 @@ const CommentSection = styled.section`
 `
 
 export default () => {
+  const { piece } = useSelector((store) => {return store.work.work })
+  const { comments } = piece
   return (
     <CommentSection>
       <WorkComment/>
