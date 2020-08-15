@@ -77,7 +77,7 @@ const Form = styled.div`
     margin-top:1.5em;
     line-height:1.0em
 `;
-function Membership(){
+function Join(){
 
   /*
 const postJoin = (Form) => {
@@ -153,7 +153,7 @@ const postInfo = (Form) =>{
 
   const onSubmit = (Form) => {
     return fetch(" http://222.251.129.150", Form)
-      .then(alert("1"))
+      // .then(alert("1"))
       .then(this.props.history.push("/"))
       .catch(err => {
           throw alert("DB오류");
@@ -166,41 +166,40 @@ const postInfo = (Form) =>{
 
 //폼
     return (
-          //
-          <div className = "Membership">
+          <div className="Membership">
           <Form onSubmit={onSubmit}>
-             이메일
-            <Email type="email" name ="Eamil" value={Email} onChange={onEmailHandler}/><br/>
-            아이디 
-            <Id type = "text" value={Id} onChange={onIdHandler}/> <input type="submit" value= "중복확인" onClick={WindowShow}/><br/>
-            비밀번호
-            <Password type = "password" maxlength="15" value={Password} onChange={onPasswordHanlder}/><br/>
-            비밀번호 확인
-            <Password type = "password" name = "passwordCheck" maxlength="15"/><br/>
-            이름
-            <Name type="text" value={Name} onChange={onNameHandler}/><br/>
-            생년월일<br/>
-            <Year type="text" placeholder="년(4자)"/> 
-            <Select name="month">
-                <option value = "1월">1월</option>
-                <option value = "2월">2월</option>
-                <option value = "3월">3월</option>
-                <option value = "4월">4월</option>
-                <option value = "5월">5월</option>
-                <option value = "6월">6월</option>
-                <option value = "7월">7월</option>
-                <option value = "8월">8월</option>
-                <option value = "9월">9월</option>
-                <option value = "10월">10월</option>
-                <option value = "11월">11월</option>
-                <option value = "12월">12월</option>
-            </Select>
-            <Year type="text" placeholder="일"/><br/> 
-            성별<br/>
-            여성 <input type="radio" value="여성"/> 남성 <input type="radio" value="남성"/><br/>
-            <button type="submit" onClick={Complete}>회원가입</button>
+            {/* 이메일*/}
+            {/*<Email type="email" name="Eamil" value={Email} onChange={onEmailHandler}/><br/>*/}
+            {/*아이디*/}
+            {/*<Id type="text" value={Id} onChange={onIdHandler}/> <input type="submit" value="중복확인" onClick={WindowShow}/><br/>*/}
+            {/*비밀번호*/}
+            {/*<Password type="password" maxlength="15" value={Password} onChange={onPasswordHanlder}/><br/>*/}
+            {/*비밀번호 확인*/}
+            {/*<Password type="password" name="passwordCheck" maxlength="15"/><br/>*/}
+            {/*이름*/}
+            {/*<Name type="text" value={Name} onChange={onNameHandler}/><br/>*/}
+            {/*생년월일<br/>*/}
+            {/*<Year type="text" placeholder="년(4자)"/>*/}
+          {/*  <Select name="month">*/}
+          {/*      <option value="1월">1월</option>*/}
+          {/*      <option value="2월">2월</option>*/}
+          {/*      <option value="3월">3월</option>*/}
+          {/*      <option value="4월">4월</option>*/}
+          {/*      <option value="5월">5월</option>*/}
+          {/*      <option value="6월">6월</option>*/}
+          {/*      <option value="7월">7월</option>*/}
+          {/*      <option value="8월">8월</option>*/}
+          {/*      <option value="9월">9월</option>*/}
+          {/*      <option value="10월">10월</option>*/}
+          {/*      <option value="11월">11월</option>*/}
+          {/*      <option value="12월">12월</option>*/}
+          {/*  </Select>*/}
+          {/*  <Year type="text" placeholder="일"/><br/> */}
+          {/*  성별<br/>*/}
+          {/*  여성 <input type="radio" value="여성"/> 남성 <input type="radio" value="남성"/><br/>*/}
+          {/*  <button type="submit" onClick={Complete}>회원가입</button>*/}
           </Form>
           </div>
       );
 }
-  export default Membership;
+  export default Join;

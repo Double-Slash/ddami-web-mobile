@@ -1,13 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const LoginForm = `
-
-
-
-
-`;
-
 function Login(){
     return(
         <div name="header">
