@@ -36,10 +36,10 @@ npm run start
 ## Team
 
 ### Developer
-💻 [샛별](https://github.com/sbyeol3) <br>
-💻 [경](https://github.com/KimGyeong) <br>
-💻 [현호](https://github.com/hyunolike) <br>
-💻 [민정](https://github.com/kmin-jeong)
+- 💻 안샛별 [@sbyeol3](https://github.com/sbyeol3)
+- 💻 황보경 [@KimGyeong](https://github.com/KimGyeong)
+- 💻 장현호 [@hyunolike](https://github.com/hyunolike)
+- 💻 김민정 [@kmin-jeong](https://github.com/kmin-jeong)
 
 ### Commit Message Convention
 
