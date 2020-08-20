@@ -1,21 +1,19 @@
 # DDAMI - web (mobile)
 
-### Development Stack
+## Development
 - React.js
+- Redux-saga
+- styled-components
 
-### Commit Message Convention
+### install
 
 ```
-Feat : 새로운 기능 추가
-Fix : 버그 수정
-Docs : 문서 수정
-Style : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
-Refactor : 코드 리펙토링
-Chore : 기타 작업
-Branch 이름은 기능별로 생성
+git clone
+yarn install
+npm run start
 ```
 
-### Page URI
+### Page routing path
 
 - `/` : 메인
 - `/join` : 회원가입
@@ -35,11 +33,22 @@ Branch 이름은 기능별로 생성
     - `/pieces`  : 작품샵
     - `/materials` : 재료샵
 
+## Team
 
-### install
+### Developer
+💻 [샛별](https://github.com/sbyeol3) <br>
+💻 [경](https://github.com/KimGyeong) <br>
+💻 [현호](https://github.com/hyunolike) <br>
+💻 [민정](https://github.com/kmin-jeong)
+
+### Commit Message Convention
 
 ```
-git clone
-yarn install
-npm run start
+Feat : 새로운 기능 추가
+Fix : 버그 수정
+Docs : 문서 수정
+Style : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
+Refactor : 코드 리펙토링
+Chore : 기타 작업
+Branch 이름은 기능별로 생성
 ```
